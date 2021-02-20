@@ -43,7 +43,10 @@ button{
 {
   background-color: #1c8adb;
 }
-.cancel-btn
+select {
+  font-size: 18px;
+}
+.reset-btn 
 {
   background-color: #1c8adb;
 }

@@ -1,96 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="sign-up/signup.css">
-
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="signup.css">
+ <title> Sign Up</title>
+ <link rel ="stylesheet" href="signup.css">
 </head>
-<body>
+    <body>
+        <div class="sign-up-form">
+            <img src="../logo.jpg">
+            <header>
+                Chitter-Chatter
+            </header>
+            <h1> Sign Up Form</h1>
+            <form>
+            <div class="row">
+                <legend class="col-sm-2 col-form-label">First Name: </legend>
+                <input type="firstname" class="input-box" placeholder="First Name" required>
 
-    <div class="main">
+                <legend class="col-sm-2 col-form-label">Last Name: </legend>
+                <input type="firstname" class="input-box" placeholder="Last Name" required>
 
-        <!-- Sign up form -->
-        <section class="signup">
-            <div class="container">
-                <div class="signup-content">
-                    <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="register-form">
-                            <div class="form-group">
-                                <label for="firstname"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="firstname" id="firstname" placeholder="First Name" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="lastname" id="lastname" placeholder="Last Name" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="username" placeholder="User Name" required/>
-                            </div>
+                <legend class="col-sm-2 col-form-label">Username: </legend>
+                <input type="username" class="input-box" placeholder="example123" required>
 
-                            <div class="form-group">
-                                <legend><i class="zmdi zmdi-account material-icons-name"></i>Gender:</legend>
+                <legend class="col-sm-2 col-form-label">Email: </legend>
+                <input type="email" class="input-box" placeholder="user@example.com" required>
 
-                                <div class="form-group">
-                                    <input type="radio" id="rbMale" name="gender" value="male" >
-                                    <label for="rbMale"><i class="zmdi zmdi-account material-icons-name"></i>Male</label>
+                <legend class="col-sm-2 col-form-label">Password: </legend>
+                <input type="password" class="input-box" placeholder="Password" required>
 
-                                    <input type="radio" id="rbFemale" name="gender" value="female" >
-                                    <label for="rbFemale"><i class="zmdi zmdi-account material-icons-name"></i> Female </label>
+                <legend class="col-sm-2 col-form-label">Confirm Password: </legend>
+                <input type="password" class="input-box" placeholder="Password" required>
 
-                                    <input type="radio" id="rbOther" name="gender" value="other">
-                                    <label for="rbOther"><i class="zmdi zmdi-account material-icons-name"></i>Other</label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="location"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="location" id="location" placeholder="Location"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Email" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password" required/>
-                            </div>
-                            <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Confirm password" required/>
-                            </div>
-                            <!-- <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                            </div> -->
-                            <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="signup-image">
-                        <figure><img src="signupimage.PNG" alt="sing up image"></figure>
-                        <button name="signin" id="signin" class="signup-image-link signin-button register-form" href="../sign-in/signin.html"> I am already member</button>
-
+                <div class="row">
+                    <legend class="col-sm-2 col-form-label">Gender: </legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input type="radio" id="rbMale" name="gender" value="male" class="form-check-input">
+                            <label for="rbMale" class="form-check-label">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id=rbFemale name="gender" value="female" class="form-check-input">
+                            <label for="rbFemale" class="form-check-label">Female</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id=rbOther name="gender" value="other" class="form-check-input">
+                            <label for="rbOther"class="form-check-label">Other</label>
+                        </div>
                     </div>
                 </div>
+                <legend class="col-sm-2 col-form-label">Location: </legend>
+                <input type="location" class="input-box" placeholder="Denver">
+                
+                <legend class="col-sm-2 col-form-label">Date: </legend>
+                <input type="date" class="input-box" placeholder="MM/DD/YYYY" required>
             </div>
-        </section>
-    </div>
 
-    <!-- JS -->
-    <script src="signup.js"></script>
-</body>
+                <div class="row form-group">
+                    <label for="securityquestion1" class="col-sm-2 col-form-label">
+                        Security Question 1:
+                    </label>
+                <div>
+                    <select id="securityquestion1" name="securityquestion1" class="form-check-input">
+                        <option value="q1?" selected>What is the city you were born in?</option>
+                        <option value="q2">What is the your mother's maiden name?</option>
+                        <option value="q3">What is the the color of your first car?</option>
+                    </select>
+                    <input type="q2" class="input-box" placeholder="Your Answer" required>
+                </div>
+                <div>
+                    <select id="securityquestion1" name="securityquestion1" class="form-check-input">
+                        <option value="q1?" selected>What is the city you were born in?</option>
+                        <option value="q2">What is the your mother's maiden name?</option>
+                        <option value="q3">What is the the color of your first car?</option>
+                    </select>
+                    <input type="q2" class="input-box" placeholder="Your Answer" required>
+                </div>
+                <div>
+                    <select id="securityquestion1" name="securityquestion1" class="form-check-input">
+                        <option value="q1?" selected>What is the city you were born in?</option>
+                        <option value="q2">What is the your mother's maiden name?</option>
+                        <option value="q3">What is the the color of your first car?</option>
+                    </select>
+                    <input type="q2" class="input-box" placeholder="Your Answer" required>
+                </div>
+
+                <legend class="col-sm-2 col-form-label">Biography: </legend>
+                <input type="bio" class="input-box" placeholder="I am a student">
+
+            
+                <button type="button" class="signup-btn">Sign Up</button>
+                <hr>
+                <button type="button" class="cancel-btn">Reset</button>
+                <hr>
+
+                <p class="or">OR</p>
+                <p>Already have an account? <a href="../sign-in/signin.html">Sign In</a></p>
+            </form>
+            <footer>@Copyright of ChitterChatter 2021</footer>
+        </div>
+    </body>
+ 
 </html>

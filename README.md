@@ -37,5 +37,14 @@ Technologies:
 - [x] Also added basic css for body, form, headers, input, button, background image, etc.
 
 **Step 2: Sign In Page UI**
+- [x] Went for the classic card look for the sign up page to keep everything nice and organized and centered
+- [x] Added a simple logo and title 
+- [x] Added user name field using ```<input type="text" id="userName" class="input-box" placeholder="Your username" required>```
+- [x] Added password name field utilizing HTML's password feature as ```<input type="password" id="userPassword" class="input-box" placeholder="Your Password" required>```
+- [x] Added a check box for "remember me" ```<p><span><input type="checkbox"></span>Remember Me</p>```
+- [x] Added a link for "Forgot Password" using ```<p><span><input type="checkbox"></span>Remember Me</p>``` although the href  is just set to # for now until we have a page for that
+- [x] Added a sign in button using ```<button type="button" class="signin-btn">Sign In</button>```
+- [x] Added a cancel button using ```<button type="button" id="cancelButton" class="cancel-btn">Cancel</button>```
+- [x] Added a sign up button to navigate to the sign up page using submit button type and onClick() function and location.ref for routing as ```<button type="submit" class="signin-btn" onClick="location.href='../sign-up/signup.html'"> Sign Up</button>```
 
 **Step 3: Home Page UI**

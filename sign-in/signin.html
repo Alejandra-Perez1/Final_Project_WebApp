@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html>
-<head>
- <title> Sign In </title>
- <link rel ="stylesheet" href="signin.css">
-</head>
+<html lang="en">
+    <head>
+    <title> Sign In </title>
+    <link rel ="stylesheet" href="signin.css">
+    </head>
     <body>
         <div class="sign-in-form">
-            <img src="../images/logo.jpg">
+            <img src="../images/logo.jpg" alt="logo">
             <header>
                 Chitter-Chatter
             </header>
             <h1> Sign In</h1>
             <form>
-                <legend class="col-sm-2 col-form-label">User Name </legend>
-                <input type="username" class="input-box" placeholder="Your username" required>
-                <legend class="col-sm-2 col-form-label">Password </legend>
-                <input type="password" class="input-box" placeholder="Your Password" required>
+                <label for="userName" class="col-sm-2 col-form-label">User Name </label>
+                <input type="text" id="userName" class="input-box" placeholder="Your username" required>
+
+                <label for="userPassword" class="col-sm-2 col-form-label">Password </label>
+                <input type="password" id="userPassword" class="input-box" placeholder="Your Password" required>
+
                 <p><span><input type="checkbox"></span>Remember Me</p>
+
                 <a href="#">Forgot Password?</a>
+
                 <button type="button" class="signin-btn">Sign In</button>
                 <hr>
+
                 <button type="button" class="cancel-btn">Cancel</button>
                 <hr>
 
                 <p class="or">OR</p>
-                <button type="button" class="signin-btn" href="../sign-up/signup.html">Sign Up</button>
+                <button type="submit" class="signin-btn" onClick="location.href='../sign-up/signup.html'"> Sign Up</button>
             </form>
             <footer>@Copyright of ChitterChatter 2021</footer>
         </div>

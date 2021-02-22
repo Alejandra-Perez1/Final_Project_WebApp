@@ -1,19 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Chitter-Chatter</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="home-page.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- Link to icon website: https://fontawesome.com/icons?d=gallery&q=hash&m=free -->
-    </head>
 
-    <div class="sidebar">
-        <img src="../images/logo.jpg" alt="logo">
-        <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
-        <!-- <a href="#explore"><i class="fas fa-hashtag"></i>Explore</a> -->
-        <a href="#profile"><i class="fa fa-fw fa-user"></i> Profile</a>
-        <a href="#settings"><i class="fa fa-fw fa-wrench"></i> Settings</a>
+<head>
+    <title>Chitter-Chatter</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/home-page.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/profile-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Link to icon website: https://fontawesome.com/icons?d=gallery&q=hash&m=free -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar" id="main-navbar">
+            <div class="navbar-inner" id="navbar-inner">
+                <div class="navbar-col1 navbar-button"> 
+                    <a href="#home"><i class="fa fa-fw fa-home "></i> Home</a>
+                    <a href="#notifications"><i class="fa fa-fw fa-bell "></i> Notifications</a>                  
+                    <a href="#messages"><i class="fa fa-fw fa-envelope-open" aria-hidden="true"></i> Messages</a>
+                </div>
+                <div class="navbar-col2">
+                    <div class="logo">
+                        <img src="../images/logo.jpg" alt="logo">
+                    </div>
+                </div>
+                <div class="navbar-col3">
+                    <div class="profile-navbar-col1 search-bar">
+                        <input type="text" placeholder="Search" size="22"> 
+                    </div>
+                    <div class="profile-navbar-col3">
+                        <button type="button" class="post-button">Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="status-bar" id="status-bar">
+            <input type="text" placeholder="What's happening?" size="80">
+        </div>
+        <div class="mainbody" id="mainbody">
+            <div class="col1">Profile Info
+                <br>
+                <label for="userName" class="col-sm-2">User Name</label>
+            </div>
+            <div class="col2">Welcome to Chitter-Chatter</div>
+            <div class="col3">Who to follow
+                <div class="footer" id="footer">
+                    <div class="footer-inner">@2021 Chitter-Chatter <br>
+                        <a href="#about"><i class="fa fa-fw fa-info "></i> About</a><br>
+                        <a href="#settings"><i class="fa fa-fw fa-cog "></i> Settings</a><br>
+                        <a href="#helpcenter"><i class="fa fa-fw fa-question-circle "></i> Help Center</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+       
     </div>
+</body>
 
 </html>

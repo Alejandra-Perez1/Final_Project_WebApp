@@ -1,0 +1,44 @@
+.profile-navbar-col1{
+    width: 50%;
+    margin-right: 2%;
+    float: left;
+    height: 100%;
+    background-color:white;
+  }
+  
+
+  .profile-navbar-col3{
+    width: 40%;
+    float: right;
+    height: 100%;
+    background-color:white;
+  }
+  .status-bar{
+    width: 45%;
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  
+    float: left;
+    height: 30px;
+    background-color:white;
+  }
+  .search-bar{
+    float: left;
+    text-align: center;
+    margin-top: 5%;
+  }
+
+  .post-button{
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #1c8adb;
+    margin-top: 10%;
+  }

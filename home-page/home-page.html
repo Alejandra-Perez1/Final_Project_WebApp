@@ -1,64 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <!-- import bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <!-- icons link - font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-<head>
-    <title>Chitter-Chatter</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/home-page.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/profile-navbar.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Link to icon website: https://fontawesome.com/icons?d=gallery&q=hash&m=free -->
-</head>
+  <body>
+    <nav class="navbar navbar-light bg-light navbar-expand-lg">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <!-- img line for GitHub -->
+        <!-- <img src="../images/logo.jpg" alt="logo"> -->
+        <img
+          src="https://cdn.glitch.com/eedd7988-6291-440f-9057-f1ade3a9d518%2Flogo.jpg?v=1614207428544"
+          alt="logo"
+      /></a>
 
-<body>
-    <div class="wrapper">
-        <div class="navbar" id="main-navbar">
-            <div class="navbar-inner" id="navbar-inner">
-                <div class="navbar-col1 navbar-button"> 
-                    <a href="#home"><i class="fa fa-fw fa-home "></i> Home</a>
-                    <a href="#notifications"><i class="fa fa-fw fa-bell "></i> Notifications</a>                  
-                    <a href="#messages"><i class="fa fa-fw fa-envelope-open" aria-hidden="true"></i> Messages</a>
-                </div>
-                <div class="navbar-col2">
-                    <div class="logo">
-                        <img src="../images/logo.jpg" alt="logo">
-                    </div>
-                </div>
-                <div class="navbar-col3">
-                    <div class="profile-navbar-col1 search-bar">
-                        <input type="text" placeholder="Search" size="22"> 
-                    </div>
-                    <div class="profile-navbar-col3">
-                        <button type="button" class="post-button">Post</button>
-                    </div>
-                </div>
-            </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="#">Notifications</a>
+        </li> -->
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search Chitter-Chatter"
+            aria-label="Search"
+          />
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+      </ul>
+      </div>
+    </nav>
+
+    <section>
+      <div class="row d-flex flex-row justify-content-center bd-highlight">
+        <div class="col-sm-4 border border-1 rounded ">
+          <ul class="nav">
+            <li class="nav-item">
+              <!--  <a class="nav-link active" aria-current="page" href="#"> </a>-->
+              <a href="#explore"><i class="fa fa-fw fa-hashtag"></i> Explore</a>
+            </li>
+          </ul>
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="#notifications"
+                ><i class="fa fa-fw fa-bell"></i> Notifications</a
+              >
+            </li>
+          </ul>
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="#messages"
+                ><i class="fa fa-fw fa-envelope"></i> Messages</a
+              >
+            </li>
+          </ul>
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="#more"><i class="fa fa-fw fa-ellipsis-h"></i> More</a>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-primary">Post</button>
         </div>
-        <div class="status-bar" id="status-bar">
-            <input type="text" placeholder="What's happening?" size="80">
+        <div class="col-sm-4 border border-1 rounded">
+          <div class="col col-inside">
+            <input type="text" placeholder="What's happening?" />
+            <button type="button" class="btn btn-primary">Post</button>
+          </div>
+          News and tweets block
         </div>
-        <div class="mainbody" id="mainbody">
-            <div class="col1">Profile Info
-                <br>
-                <label for="userName" class="col-sm-2">User Name</label>
-            </div>
-            <div class="col2">Welcome to Chitter-Chatter</div>
-            <div class="col3">Who to follow
-                <div class="footer" id="footer">
-                    <div class="footer-inner">@2021 Chitter-Chatter <br>
-                        <a href="#about"><i class="fa fa-fw fa-info "></i> About</a><br>
-                        <a href="#settings"><i class="fa fa-fw fa-cog "></i> Settings</a><br>
-                        <a href="#helpcenter"><i class="fa fa-fw fa-question-circle "></i> Help Center</a>
-                    </div>
-                </div>
-            </div>
-            
+        <div class="col border border-1 col-sm-4 rounded d-flex flex-column">
+          <div class="col-4 border-col4 rounded ">
+            <h1>
+              Trends for you
+            </h1>
+            <p>
+              Add trends here...
+            </p>
+          </div>
+          <div class="col-4 border-col4 rounded">
+            <h2>
+              Who to follow
+            </h2>
+            <p>
+              Add suggestions here..
+            </p>
+          </div>
         </div>
-
-       
-    </div>
-</body>
-
+      </div>
+    </section>
+    <footer class="text-center">
+      @2021 Chitter-Chatter
+    </footer>
+  </body>
 </html>
+

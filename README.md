@@ -48,3 +48,6 @@ Technologies:
 - [x] Added a sign up button to navigate to the sign up page using submit button type and onClick() function and location.ref for routing as ```<button type="submit" class="signin-btn" onClick="location.href='../sign-up/signup.html'"> Sign Up</button>```
 
 **Step 3: Home Page UI**
+- [x] Used bootstraps for general styling and sizing
+- [x] Used cloudfare for fonts
+- [x] Created different sections using ```<nav class="navbar navbar-light bg-light navbar-expand-lg">```

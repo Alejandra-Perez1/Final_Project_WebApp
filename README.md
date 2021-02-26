@@ -51,3 +51,6 @@ Technologies:
 - [x] Used bootstraps for general styling and sizing
 - [x] Used cloudfare for icons like explore, notification, home etc.
 - [x] Created different sections using ```<nav class="navbar navbar-light bg-light navbar-expand-lg">```
+- [x] Created side menu using ```<li class="nav-item">``` with different href and icon. The href is set to # for now until we have the other pages set up.
+- [x] Created the "What's happening" section with text area as input and regular button for "post"
+- [x] Added some dummy users and tweets using some profile icons from glitch

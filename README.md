@@ -49,8 +49,18 @@ Technologies:
 
 **Step 3: Home Page UI**
 - [x] Used bootstraps for general styling and sizing
-- [x] Used cloudfare for icons like explore, notification, home etc.
-- [x] Created different sections using ```<nav class="navbar navbar-light bg-light navbar-expand-lg">```
-- [x] Created side menu using ```<li class="nav-item">``` with different href and icon. The href is set to # for now until we have the other pages set up.
-- [x] Created the "What's happening" section with text area as input and regular button for "post"
-- [x] Added some dummy users and tweets using some profile icons from glitch
+- [x] Used font awesome for icons like explore, notification, home etc.
+- [x] Made sure webpage looks good in different screen sizes ```<meta name="viewport" content="width=device-width, initial-scale=1" />```
+- [x] Created a navigation bar at the top of the page using bootstrap navbar class
+- [x] Added links to the home page and user's profile and also a search box in the navigation bar 
+- [x] Created 3 columns under the navigation bar, all columns are styled with a gray border and rounded.```<div class="row d-flex flex-row justify-content-center bd-highlight"> & <div class="col  border border-1 rounded ">```
+- [x] Column 1: Includes links to Explore the page, Notifications, Messages, and More options using the nav & nav-item class from bootstrap```<ul class="nav"><li class="nav-item">```
+- [x] Column 2: Includes a What's happening input box with a Post button follow by User's posts samples for the purpose of this assignment. The size of this column is col-6 ```<div class="col-6 border border-1 rounded">```
+- [x] Column 3: Includes A trending section at the top and a Who to follow section at the bottom. 
+- [x] The  Trending section was created by using col-12 and class card and container from bootstrap ``` <div class="col-12 border-col4 rounded "> , <div class="card"> , <div class="container">```
+- [x] The Who to follow section was created by using col-12 and spans for the purpose of this assignment only ``` <div class="col-12 border-col4 rounded"> ```
+- [x] At the end of the page, there is a footer added that reads: @2021 Chitter-Chatter using the text-center class to center the footer at the bottom of the page ``` <footer class="text-center"> ```
+
+**As a general note**
+- [x] This page will be modify as we develop the final draft for this project. Some sections of the home page will removed, added, or edited. 
+  

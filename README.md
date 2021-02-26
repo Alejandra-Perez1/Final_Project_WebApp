@@ -49,5 +49,5 @@ Technologies:
 
 **Step 3: Home Page UI**
 - [x] Used bootstraps for general styling and sizing
-- [x] Used cloudfare for fonts
+- [x] Used cloudfare for icons like explore, notification, home etc.
 - [x] Created different sections using ```<nav class="navbar navbar-light bg-light navbar-expand-lg">```

@@ -20,7 +20,7 @@ Technologies:
 4. All three of us communicated over Discord and divided work among ourself:
 * Goma will work on the sign up page
 * Sharvita will work on the sign in page
-* Alejandra will work on the larger part of the home page and Goma and Sharvita will help with brining in dummy user data
+* Alejandra will work on the user homepage/landing page and Goma and Sharvita will help with anything else
 
 **Step 1: Sign Up Page UI**
 - [x] Went for the classic card look for the sign up page to keep everything nice and organized and centered

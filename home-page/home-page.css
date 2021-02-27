@@ -1,12 +1,10 @@
-/* CSS files add styling rules to your content */
-
 body {
   margin: 0em;
 }
 
 img {
   width: 70px;
-  border-radius: 10%;
+  border-radius: 50%;
 }
 
 button {
@@ -15,7 +13,7 @@ button {
   padding: 10px;
   border-radius: 20px;
   font-size: 15px;
-  margin: 10px 0;
+  margin: 5px 0;
   border: none;
   outline: none;
   cursor: pointer;
@@ -42,6 +40,7 @@ h4 {
   color: rgb(200, 200, 200);
 }
 
-
-
-
+.logo{
+    width: 70px;
+    border-radius: 50%;
+}

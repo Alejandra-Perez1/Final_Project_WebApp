@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="signup.css" />
   </head>
 
@@ -10,157 +11,177 @@
             <img src="../images/logo.jpg" alt="logo" />
             <header>Chitter-Chatter</header>
             <h1>Sign Up</h1>
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-      
-        <form>
-        <div class="form-group row">
-          <label for="textFirstName" class="col-sm-2 col-form-label">First Name:</label>
-          <br/>
-          <input type="text" class="input-box" id="textFirstName" name="textFirstName" placeholder="Jhon" required/>
-          <br/>
-        </div>
+        
+        <form class="signup-form" id="signup-form">
+          <div class=" form-control">
+            <label for="textFirstName" class="col-sm-2 col-form-label">First Name:</label>
+            <input type="text" id="textFirstName" name="textFirstName" placeholder="Jhon" required/>
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small> Error Message </small>
 
-        <div class="form-group row">
-            <label for="textLastName" class="col-sm-2 col-form-label">Last Name:</label>
-            <br/>
-            <input type="text" class="input-box" id="textLastName" name="textLastName" placeholder="Doe" required/>
-            <br/>
-        </div>
+          </div>
 
-        <div class="form-group row"> 
-          <label for="txtUsername" class="col-sm-2 col-form-label">Username:</label>
-          <br/>
-          <input type="text" class="input-box" id="txtUsername" name="txtUsername" placeholder="JhonDoe123" required/>
-          <br/>
-        </div>
+          <div class="form-control">
+              <label for="textLastName" class="col-sm-2 col-form-label">Last Name:</label>
+              <input type="text" id="textLastName" name="textLastName" placeholder="Doe" required/>
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+              <small> Error Message </small>
+          </div>
 
-        <div class="form-group row">
-          <label for="emailAddress" class="col-sm-2 col-form-label">Email:</label>
-          <br />
-          <input type="email" class="input-box" id="emailAddress" name="emailAddress" placeholder="user@example.com" required/>
-          <br/>
-        </div>
+          <div class="form-control"> 
+            <label for="txtUsername" class="col-sm-2 col-form-label">Username:</label>
+            <input type="text" id="txtUsername" name="txtUsername" placeholder="JhonDoe123" required/>
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small> Error Message </small>
+          </div>
 
-        <div class="form-group row">
-          <label for="userPassword" class="col-sm-2 col-form-label">Password:</label>
-          <br/>
-          <input
-            type="password"
-            class="input-box"
-            id="userPassword"
-            name="userPassword"
-            placeholder="Password"
-            required
-          />
-          <br/>
-        </div>
+          <div class="form-control">
+            <label for="emailAddress" class="col-sm-2 col-form-label">Email:</label>
+            <input type="email" class="input-box" id="emailAddress" name="emailAddress" placeholder="user@example.com" required/>
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small> Error Message </small>
+          </div>
 
-        <div class="form-group row">
-          <label for="userPasswordRepeat" class="col-sm-2 col-form-label">Confirm Password:</label>
-          <br/>
-          <input type="password" class="input-box" id="userPasswordRepeat" name="userPasswordRepeat" placeholder="Password" required/>
-          <br/>
-        </div>
+          <div class="form-control">
+            <label for="userPassword" class="col-sm-2 col-form-label">Password:</label>
+            <input type="password" id="userPassword" name="userPassword" placeholder="Password" required/>
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small> Error Message </small>
+          </div>
 
-        <fieldset class="form-group">
-            <div class="row">
-              <label class="col-sm-2 col-form-label">Gender:</label>
-            
-              <div class="col-sm-4">
-                <div class="form-check">
-                  <input type="radio" id="rbMale" name="gender" value="male" class="form-check-input">
-                  <label for="rbMale" class="form-check-label">Male</label>
-                </div>
-                
-                <div class="form-check">
-                  <input type="radio" id="rbFemale" name="gender" value="female" class="form-check-input">
-                  <label for="rbFemale" class="form-check-label"> Female </label>
-                </div>
-                
-                <div class="form-check">
-                  <input type="radio" id="rbOther" name="gender" value="other" class="form-check-input">
-                  <label for="rbOther" class="form-check-label">Other</label>
+          <div class="form-control">
+            <label for="userPasswordRepeat" class="col-sm-2 col-form-label">Confirm Password:</label>
+            <input type="password" id="userPasswordRepeat" name="userPasswordRepeat" placeholder="Password" required/>
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small> Error Message </small>
+          </div>
+
+          <fieldset class="form-group">
+              <div class="row">
+                <label class="col-sm-2 col-form-label">Gender:</label>
+              
+                <div class="col-sm-4">
+                  <div class="form-check">
+                    <input type="radio" id="rbMale" name="gender" value="male" class="form-check-input">
+                    <label for="rbMale" class="form-check-label">Male</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input type="radio" id="rbFemale" name="gender" value="female" class="form-check-input">
+                    <label for="rbFemale" class="form-check-label"> Female </label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input type="radio" id="rbOther" name="gender" value="other" class="form-check-input">
+                    <label for="rbOther" class="form-check-label">Other</label>
+                  </div>
                 </div>
               </div>
+            </fieldset>
+            <br>
+
+          <div class="form-control">
+            <label for="userLocation" class="col-sm-2 col-form-label">Location:</label>
+            <input type="text" id="userLocation" placeholder="Denver" />
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small> Error Message </small>
+          </div>
+
+          <div class="form-control">
+            <label for="date" class="col-sm-2 col-form-label">Date:</label>
+            <input type="date" id="date" required />
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small> Error Message </small>
+          </div>
+
+          <fieldset>
+            <div class="form-control">
+              <label for="securityquestion1" class="col-sm-2 col-form-label" style="font-size: 18px">
+                Security Question 1
+              </label>
+            </div>
+
+            <div>
+              <select id="securityquestion1" name="securityquestion1" class="form-check-input">
+                <option value="q1" selected> What is the city you were born in?</option>
+                <option value="q2">What is your mother's maiden name?</option>
+                <option value="q3"> What is the the color of your first car? </option>
+              </select>
+              <input type="text" id="securityQuestion1Answer" class="input-box" placeholder="Your Answer" required/>
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+              <small> Error Message </small>
+            </div>
+            <br/>
+
+            <div class="form-control">
+              <label for="securityquestion2" class="col-sm-2 col-form-label" style="font-size: 18px">
+                Security Question 2
+              </label>
+            </div>
+
+            <div>
+              <select id="securityquestion2" name="securityquestion2" class="form-check-input">
+                <option value="q1" selected>
+                  What is the city you were born in?
+                </option>
+                <option value="q2">What is your mother's maiden name?</option>
+                <option value="q3">
+                  What is the the color of your first car?
+                </option>
+              </select>
+              <input type="text" id="securityQuestion2Answer" class="input-box" placeholder="Your Answer" required/>
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+              <small> Error Message </small>
+            </div>
+            <br />
+            <div class="form-control">
+              <label for="securityquestion3" class="col-sm-2 col-form-label" style="font-size: 18px">
+                Security Question 3
+              </label>
+            </div>
+            <div>
+              <select id="securityquestion3" name="securityquestion3" class="form-check-input">
+                <option value="q1" selected>
+                  What is the city you were born in?
+                </option>
+                <option value="q2">What is your mother's maiden name?</option>
+                <option value="q3">
+                  What is the the color of your first car?
+                </option>
+              </select>
+              <input type="text" id="securityQuestion3Answer" class="input-box" placeholder="Your Answer" required/>
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+              <small> Error Message </small>
             </div>
           </fieldset>
-
-        <div class="form-group row">
-          <label for="userLocation" class="col-sm-2 col-form-label">Location:</label>
-          <input type="text" id="userLocation" class="input-box" placeholder="Denver" />
-        </div>
-
-        <div class="form-group row">
-          <label for="date" class="col-sm-2 col-form-label">Date:</label>
-          <input type="date" id="date" class="input-box" required />
-        </div>
-
-        <fieldset>
-          <div class="row form-group">
-            <label for="securityquestion1" class="col-sm-2 col-form-label" style="font-size: 18px">
-              Security Question 1
-            </label>
-          </div>
-
-          <div>
-            <select id="securityquestion1" name="securityquestion1" class="form-check-input">
-              <option value="q1" selected> What is the city you were born in?</option>
-              <option value="q2">What is your mother's maiden name?</option>
-              <option value="q3"> What is the the color of your first car? </option>
-            </select>
-            <input type="text" id="securityQuestion1Answer" class="input-box" placeholder="Your Answer" required/>
-          </div>
-          <br/>
-
-          <div class="row form-group">
-            <label for="securityquestion2" class="col-sm-2 col-form-label" style="font-size: 18px">
-              Security Question 2
-            </label>
-          </div>
-
-          <div>
-            <select id="securityquestion2" name="securityquestion2" class="form-check-input">
-              <option value="q1" selected>
-                What is the city you were born in?
-              </option>
-              <option value="q2">What is your mother's maiden name?</option>
-              <option value="q3">
-                What is the the color of your first car?
-              </option>
-            </select>
-            <input type="text" id="securityQuestion2Answer" class="input-box" placeholder="Your Answer" required/>
-          </div>
           <br />
-          <div class="row form-group">
-            <label for="securityquestion3" class="col-sm-2 col-form-label" style="font-size: 18px">
-              Security Question 3
-            </label>
+
+          <div class="form-control"> 
+            <label for="biography" class="col-sm-2 col-form-label">Biography:</label>
+            <input type="text" id="biography" name="biography" placeholder="Student" required/>
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small> Error Message </small>
           </div>
-          <div>
-            <select id="securityquestion3" name="securityquestion3" class="form-check-input">
-              <option value="q1" selected>
-                What is the city you were born in?
-              </option>
-              <option value="q2">What is your mother's maiden name?</option>
-              <option value="q3">
-                What is the the color of your first car?
-              </option>
-            </select>
-            <input type="text" id="securityQuestion3Answer" class="input-box" placeholder="Your Answer" required/>
-          </div>
-        </fieldset>
-        <br />
 
-        <label for="biography" class="col-sm-2 col-form-label">Biography:</label>
-        <input type="text" id="biography" class="input-box" placeholder="I am a student"/>
+          <button type="button" class="signup-btn">Sign Up</button>
+          <hr/>
+          <button type="reset" class="reset-btn">Reset</button>
+          <hr />
 
-        <button type="button" class="signup-btn">Sign Up</button>
-        <hr/>
-        <button type="reset" class="reset-btn">Reset</button>
-        <hr />
-
-        <p class="or">OR</p>
-        <p> Already have an account? <a href="../sign-in/signin.html">Sign In</a></p>
+          <p class="or">OR</p>
+          <p> Already have an account? <a href="../sign-in/signin.html">Sign In</a></p>
       </form>
       <footer>@Copyright of ChitterChatter 2021</footer>
     </div>

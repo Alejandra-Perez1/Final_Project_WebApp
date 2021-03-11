@@ -1,6 +1,6 @@
 //Get all of the necessary element
-const signupForm = document.getElementById('signup-form');
-const firstName = document.getElementById('textFirstName');
+const form = document.getElementById('form');
+const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('textLastName');
 const username = document.getElementById('txtUsername');
 const email = document.getElementById('emailAddress');
@@ -11,11 +11,11 @@ const date = document.getElementById('date');
 const securityQuestion1Answer = document.getElementById('securityQuestion1Answer');
 const securityQuestion2Answer = document.getElementById('securityQuestion2Answer');
 const securityQuestion3Answer = document.getElementById('securityQuestion3Answer');
-const biography = document.getElementById('biography');
+const biography = document.getElementById('biography')
 
-signupForm.addEventListener('submit', e => {
-	e.preventDefault();
+form.addEventListener('submit', e => {
 	
+	e.preventDefault();
 	checkInputs();
 });
 
@@ -28,7 +28,7 @@ function checkInputs() {
 	const passwordValue = password.value.trim();
 	const password2Value = password2.value.trim();
 	
-    if(firstNameValue === '') {
+    if(firstNameValue === '' || firstNameValue == null ) {
 		setErrorFor(firstName, 'First Name cannot be blank');
 	} else {
 		setSuccessFor(firstName);

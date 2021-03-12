@@ -12,6 +12,8 @@ const securityQuestion1Answer = document.getElementById('securityQuestion1Answer
 const securityQuestion2Answer = document.getElementById('securityQuestion2Answer');
 const securityQuestion3Answer = document.getElementById('securityQuestion3Answer');
 const biography = document.getElementById('biography')
+var elements = document.getElementsByTagName("input");
+var invalidChars = ['#', '!', '~', '&', '<', '>', '"', "'"];
 
 form.addEventListener('submit', e => {
 	
@@ -66,6 +68,36 @@ function checkInputs() {
 		setErrorFor(password2, 'Password does not match');
 	} else{
 		setSuccessFor(password2);
+	}
+
+	if(userLocation.value === '' || userLocation.value == null ) {
+		setErrorFor(userLocation, 'Location cannot be blank');
+	} else {
+		setSuccessFor(userLocation);
+	}
+
+	if(date.value === '' || date.value == null ) {
+		setErrorFor(date, 'Date cannot be blank');
+	} else {
+		setSuccessFor(date);
+	}
+
+	if(securityQuestion1Answer.value === '' || securityQuestion1Answer.value == null ) {
+		setErrorFor(securityQuestion1Answer, 'Security Question cannot be blank');
+	} else {
+		setSuccessFor(securityQuestion1Answer);
+	}
+
+	if(securityQuestion2Answer.value === '' || securityQuestion2Answer.value == null ) {
+		setErrorFor(securityQuestion2Answer, 'Security Question cannot be blank');
+	} else {
+		setSuccessFor(securityQuestion2Answer);
+	}
+
+	if(securityQuestion3Answer.value === '' || securityQuestion3Answer.value == null ) {
+		setErrorFor(securityQuestion3Answer, 'Security Question cannot be blank');
+	} else {
+		setSuccessFor(securityQuestion3Answer);
 	}
 }
 

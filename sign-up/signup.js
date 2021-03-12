@@ -12,11 +12,8 @@ const securityQuestion1Answer = document.getElementById('securityQuestion1Answer
 const securityQuestion2Answer = document.getElementById('securityQuestion2Answer');
 const securityQuestion3Answer = document.getElementById('securityQuestion3Answer');
 const biography = document.getElementById('biography')
-var elements = document.getElementsByTagName("input");
-var invalidChars = ['#', '!', '~', '&', '<', '>', '"', "'"];
 
 form.addEventListener('submit', e => {
-	
 	e.preventDefault();
 	checkInputs();
 });
@@ -29,22 +26,32 @@ function checkInputs() {
 	const emailValue = email.value.trim();
 	const passwordValue = password.value.trim();
 	const password2Value = password2.value.trim();
+	var invalidChars = ['#', '!', '~', '&', '<', '>', '"', "'",'{','}'];
 	
+	//First name empty value, illegal character check
     if(firstNameValue === '' || firstNameValue == null ) {
 		setErrorFor(firstName, 'First Name cannot be blank');
+	} else if (firstNameValue.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+		setErrorFor(firstName, 'Illegal Character');
 	} else {
 		setSuccessFor(firstName);
 	}
 
+	//Last name empty value, illegal character check
     if(lastNameValue === '') {
 		setErrorFor(lastName, 'Last Name cannot be blank');
+	} else if (lastNameValue.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+		setErrorFor(lastName, 'Illegal Character');
 	} else {
 		setSuccessFor(lastName);
 	}
     
+	//Username empty value, illegal character check
 	if(usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
-	} else {
+	} else if (lastNameValue.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+		setErrorFor(lastName, 'Illegal Character');
+	}else {
 		setSuccessFor(username);
 	}
 	
@@ -55,10 +62,12 @@ function checkInputs() {
 	} else {
 		setSuccessFor(email);
 	}
-	
+
 	if(passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
-	} else {
+	}else if (passwordValue.search(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/)) {
+		setErrorFor(password, 'Password must be lower & upper case letter, number, and 6-20 in length');
+	}else {
 		setSuccessFor(password);
 	}
 	
@@ -72,6 +81,8 @@ function checkInputs() {
 
 	if(userLocation.value === '' || userLocation.value == null ) {
 		setErrorFor(userLocation, 'Location cannot be blank');
+	} else if (userLocation.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+		setErrorFor(userLocation, 'Illegal Character');
 	} else {
 		setSuccessFor(userLocation);
 	}
@@ -84,20 +95,32 @@ function checkInputs() {
 
 	if(securityQuestion1Answer.value === '' || securityQuestion1Answer.value == null ) {
 		setErrorFor(securityQuestion1Answer, 'Security Question cannot be blank');
-	} else {
+	} else if (securityQuestion1Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+		setErrorFor(securityQuestion1Answer, 'Illegal Character');
+	}else {
 		setSuccessFor(securityQuestion1Answer);
 	}
 
 	if(securityQuestion2Answer.value === '' || securityQuestion2Answer.value == null ) {
 		setErrorFor(securityQuestion2Answer, 'Security Question cannot be blank');
-	} else {
+	} else if (securityQuestion2Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+		setErrorFor(securityQuestion2Answer, 'Illegal Character');
+	}else {
 		setSuccessFor(securityQuestion2Answer);
 	}
 
 	if(securityQuestion3Answer.value === '' || securityQuestion3Answer.value == null ) {
 		setErrorFor(securityQuestion3Answer, 'Security Question cannot be blank');
-	} else {
+	} else if (securityQuestion3Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+		setErrorFor(securityQuestion3Answer, 'Illegal Character');
+	}else {
 		setSuccessFor(securityQuestion3Answer);
+	}
+
+	if (biography.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+		setErrorFor(biography, 'Illegal Character');
+	} else {
+		setSuccessFor(biography);
 	}
 }
 

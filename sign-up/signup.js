@@ -148,13 +148,47 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-function updateSecurity(){
-    var ddSecurity= document.getElementById("securityquestion1");
-    var divCountry = document.getElementById("divSecurity");
+function updateSecurity1View(){
+    var securityquestion1 = document.getElementById("securityquestion1");
+    var securityQuestion1Answer = document.getElementById("securityQuestion1Answer");
 
-    if(securityquestion1.value == "What is the the color of your first car?"){
-        divCountry.classList.remove("invisible");
-    }else{
-        divCountry.classList.add("invisible");
-    }
+    if(securityquestion1.value == "securityquestion1_q1"){
+        securityQuestion1Answer.classList.remove("invisible");
+    }else if (securityquestion1.value == "securityquestion1_q2"){
+        securityQuestion1Answer.classList.remove("invisible");
+    }else if (securityquestion1.value == "securityquestion1_q3"){
+        securityQuestion1Answer.classList.remove("invisible");
+    }else {
+		securityQuestion1Answer.classList.remove("invisible");
+	}
+}
+
+function updateSecurity2View() {
+	var securityquestion2 = document.getElementById("securityquestion2");
+    var securityQuestion2Answer = document.getElementById("securityQuestion2Answer");
+
+	if(securityquestion2.value == "securityquestion2_q1"){
+        securityQuestion2Answer.classList.remove("invisible");
+    }else if (securityquestion2.value == "securityquestion2_q2"){
+        securityQuestion2Answer.classList.remove("invisible");
+    }else if (securityquestion2.value == "securityquestion2_q3"){
+        securityQuestion2Answer.classList.remove("invisible");
+    }else {
+		securityQuestion2Answer.classList.remove("invisible");
+	}
+}
+
+function updateSecurity3View() {
+	var securityquestion3 = document.getElementById("securityquestion3");
+    var securityQuestion3Answer = document.getElementById("securityQuestion3Answer");
+
+	if(securityquestion3.value == "securityquestion3_q1"){
+        securityQuestion3Answer.classList.remove("invisible");
+    }else if (securityquestion3.value == "securityquestion3_q2"){
+        securityQuestion3Answer.classList.remove("invisible");
+    }else if (securityquestion3.value == "securityquestion3_q3"){
+        securityQuestion3Answer.classList.remove("invisible");
+    }else {
+		securityQuestion3Answer.classList.remove("invisible");
+	}
 }

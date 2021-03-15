@@ -181,3 +181,7 @@ img
 .illegalChar{
   color: red;
 }
+
+.invisible {
+  display: none;
+}

@@ -147,3 +147,14 @@ function setSuccessFor(input) {
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+function updateSecurity(){
+    var ddSecurity= document.getElementById("securityquestion1");
+    var divCountry = document.getElementById("divSecurity");
+
+    if(securityquestion1.value == "What is the the color of your first car?"){
+        divCountry.classList.remove("invisible");
+    }else{
+        divCountry.classList.add("invisible");
+    }
+}

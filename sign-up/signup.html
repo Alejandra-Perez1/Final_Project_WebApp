@@ -16,7 +16,7 @@
         <form class="form" id="form">
           <div class="form-control">
             <label for="firstName" class="col-sm-2 col-form-label">First Name:</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Jhon"/>
+            <input type="text" id="firstName" name="firstName" placeholder="John"/>
             <i class="fa fa-check-circle"></i>
             <i class="fa fa-exclamation-circle"></i>
             <small> Error Message </small>
@@ -101,15 +101,18 @@
           </div>
 
           <div class="form-control">
-            <select id="securityquestion1" name="securityquestion1" class="form-check-input">
-              <option value="q1" selected> What is the city you were born in?</option>
+            <select id="securityquestion1" name="securityquestion1" class="form-check-input" onchange="updateSecurity()">
+              <option value="q0"></option>
+              <option value="q1"> What is the city you were born in?</option>
               <option value="q2">What is your mother's maiden name?</option>
               <option value="q3"> What is the the color of your first car? </option>
             </select>
-            <input type="text" id="securityQuestion1Answer" class="input-box" placeholder="Your Answer"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
+              <div id="divSecurity" class="row form-group invisible">
+                <input type="text" id="securityQuestion1Answer" class="input-box" placeholder="Your Answer"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+            </div>
           </div>
 
           <div class="form-control">
@@ -119,27 +122,28 @@
           </div>
 
           <div class="form-control">
-            <select id="securityquestion2" name="securityquestion2" class="form-check-input">
-              <option value="q1" selected>
-                What is the city you were born in?
-              </option>
+            <select id="securityquestion2" name="securityquestion2" class="form-check-input" onchange="updateSecurity()">
+              <option value="q0"></option>
+              <option value="q1"> What is the city you were born in?</option>
               <option value="q2">What is your mother's maiden name?</option>
-              <option value="q3"> What is the the color of your first car?</option>
+              <option value="q3">What is the the color of your first car?</option>
             </select>
-            <input type="text" id="securityQuestion2Answer" class="input-box" placeholder="Your Answer"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
+            <div id="divSecurity" class="row form-group invisible">
+              <input type="text" id="securityQuestion2Answer" class="input-box" placeholder="Your Answer"/>
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+              <small> Error Message </small>
           </div>
-          
+          </div>
           <div class="form-control">
             <label for="securityquestion3" class="col-sm-2 col-form-label" style="font-size: 18px">
               Security Question 3
             </label>
           </div>
           <div class="form-control">
-            <select id="securityquestion3" name="securityquestion3" class="form-check-input">
-              <option value="q1" selected>
+            <select id="securityquestion3" name="securityquestion3" class="form-check-input" onchange="updateSecurity()">
+              <option value="q0"></option>
+              <option value="q1">
                 What is the city you were born in?
               </option>
               <option value="q2">What is your mother's maiden name?</option>
@@ -147,10 +151,12 @@
                 What is the the color of your first car?
               </option>
             </select>
-            <input type="text" id="securityQuestion3Answer" class="input-box" placeholder="Your Answer"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
+            <div id="divSecurity" class="row form-group invisible">
+              <input type="text" id="securityQuestion3Answer" class="input-box" placeholder="Your Answer"/>
+              <i class="fa fa-check-circle"></i>
+              <i class="fa fa-exclamation-circle"></i>
+              <small> Error Message </small>
+            </div>
           </div>
           <div class="striped-border"></div>
 

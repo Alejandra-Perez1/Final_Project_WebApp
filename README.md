@@ -67,8 +67,17 @@ Technologies:
 - [x] Added 2 icons to each fields that needs to have form validation: one for sucessful input and one for incorrect input
 - [x] Also added a placeholder for the error message that will be displayed if there is an invalid input
 - [x] Added CSS styling for error - input box turns red when the user enters invalid input
-- [x] Added CSS to set the place holder for the error message to be hidden unless user has invalid input
+- [x] Added CSS to set the placeholder for the error message to be hidden unless user has invalid input
 - [x] Added CSS styilg for success - input box truns green when the user enters correct input
-
+- [x] Created a JS file to add all of the form validation
+- [x] Used ```document.getElementById``` to get all of the input elements that requires validation
+- [x] Created a ```checkInputs()``` function which checks all of the inputs to see if it's empty, has any invalid characters, etc.
+- [x] If any of the inputs have ```(/[\<\>!@#{}()\$%^&\*,'"`]+/i)``` characters, it makes the placeholder error message visible with the message "Illegal Characters",  turns the field red, and shows the ! icon
+- [x] If any of the input fields are empty, it makes the placeholder error message visible with the message "Field can't be empty", turns the field red, and shows the ! icon
+- [x] Created a ```isEmail()``` that returns a list of characters that consists of valid characters in the email
+- [x] If the user puts in a character that is not in ```isEmail()``` function, it makes the placeholder error message visible with the message "Illegal Characters", turns the field red, and shows the ! icon
+- [x] If the password value doesn't fit theese characters ```(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/))``` then it makes the placeholder error message visible with the message "Password must be lower & upper case letter, number, and 6-20 in length", turns the field red, and shows the ! icon
+- [ ] If the input fields are not empty and it doesn't have illegal characters then it turns the input boxes green and shows a checkmark
+ 
 #### Security Question Dynamicity
   

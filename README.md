@@ -80,5 +80,8 @@ Technologies:
 - [x] If the input fields are not empty and it doesn't have illegal characters then it turns the input boxes green and shows a checkmark
  
 #### Security Question Dynamicity
-- [x] 
+- [x] Created a CSS styling ```invisible```, set the display to none, and also added the ```invisible``` class to all 3 security question answer
+- [x] Created a ```updateSecurity1View(), updateSecurity2View(), updateSecurity3View()``` to make the security question answer box hidden/visible
+- [x] Used ```classList.remove("invisible")``` to make the security question answer box visible if any of the question from the select list is selected
+- [x] Used ```classList.add("invisible")``` to make the security question answer box hidden if none of the question from the select list is selected
   

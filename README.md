@@ -13,6 +13,7 @@ Technologies:
 * For this assignment, we mainly worked with HTML and CSS  to setup our UI. 
 * We use Visual Studio Code to create projects, run code, push code to Github as well as to pull code from Github
 
+### Assignment 1
 #### Steps we took to complete the project/How we divied Work among the Team
 **Step 0: GitHub/Visual Studio Code Setup Work Distribution**
 1. Alejandra created a GitHub repository which had 1 simple html file and a readme along with a page configuration
@@ -61,6 +62,13 @@ Technologies:
 - [x] The Who to follow section was created by using col-12 and spans for the purpose of this assignment only ``` <div class="col-12 border-col4 rounded"> ```
 - [x] At the end of the page, there is a footer added that reads: @2021 Chitter-Chatter using the text-center class to center the footer at the bottom of the page ``` <footer class="text-center"> ```
 
-**As a general note**
-- [x] This page will be modify as we develop the final draft for this project. Some sections of the home page will removed, added, or edited. 
+### Assignment 2
+#### Form Validation
+- [x] Added 2 icons to each fields that needs to have form validation: one for sucessful input and one for incorrect input
+- [x] Also added a placeholder for the error message that will be displayed if there is an invalid input
+- [x] Added CSS styling for error - input box turns red when the user enters invalid input
+- [x] Added CSS to set the place holder for the error message to be hidden unless user has invalid input
+- [x] Added CSS styilg for success - input box truns green when the user enters correct input
+
+#### Security Question Dynamicity
   

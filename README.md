@@ -77,7 +77,8 @@ Technologies:
 - [x] Created a ```isEmail()``` that returns a list of characters that consists of valid characters in the email
 - [x] If the user puts in a character that is not in ```isEmail()``` function, it makes the placeholder error message visible with the message "Illegal Characters", turns the field red, and shows the ! icon
 - [x] If the password value doesn't fit theese characters ```(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/))``` then it makes the placeholder error message visible with the message "Password must be lower & upper case letter, number, and 6-20 in length", turns the field red, and shows the ! icon
-- [ ] If the input fields are not empty and it doesn't have illegal characters then it turns the input boxes green and shows a checkmark
+- [x] If the input fields are not empty and it doesn't have illegal characters then it turns the input boxes green and shows a checkmark
  
 #### Security Question Dynamicity
+- [x] 
   

@@ -13,6 +13,7 @@ Technologies:
 * For this assignment, we mainly worked with HTML and CSS  to setup our UI. 
 * We use Visual Studio Code to create projects, run code, push code to Github as well as to pull code from Github
 
+### Assignment 1
 #### Steps we took to complete the project/How we divied Work among the Team
 **Step 0: GitHub/Visual Studio Code Setup Work Distribution**
 1. Alejandra created a GitHub repository which had 1 simple html file and a readme along with a page configuration
@@ -61,6 +62,26 @@ Technologies:
 - [x] The Who to follow section was created by using col-12 and spans for the purpose of this assignment only ``` <div class="col-12 border-col4 rounded"> ```
 - [x] At the end of the page, there is a footer added that reads: @2021 Chitter-Chatter using the text-center class to center the footer at the bottom of the page ``` <footer class="text-center"> ```
 
-**As a general note**
-- [x] This page will be modify as we develop the final draft for this project. Some sections of the home page will removed, added, or edited. 
+### Assignment 2
+#### Form Validation
+- [x] Added 2 icons to each fields that needs to have form validation: one for sucessful input and one for incorrect input
+- [x] Also added a placeholder for the error message that will be displayed if there is an invalid input
+- [x] Added CSS styling for error - input box turns red when the user enters invalid input
+- [x] Added CSS to set the placeholder for the error message to be hidden unless user has invalid input
+- [x] Added CSS styilg for success - input box truns green when the user enters correct input
+- [x] Created a JS file to add all of the form validation
+- [x] Used ```document.getElementById``` to get all of the input elements that requires validation
+- [x] Created a ```checkInputs()``` function which checks all of the inputs to see if it's empty, has any invalid characters, etc.
+- [x] If any of the inputs have ```(/[\<\>!@#{}()\$%^&\*,'"`]+/i)``` characters, it makes the placeholder error message visible with the message "Illegal Characters",  turns the field red, and shows the ! icon
+- [x] If any of the input fields are empty, it makes the placeholder error message visible with the message "Field can't be empty", turns the field red, and shows the ! icon
+- [x] Created a ```isEmail()``` that returns a list of characters that consists of valid characters in the email
+- [x] If the user puts in a character that is not in ```isEmail()``` function, it makes the placeholder error message visible with the message "Illegal Characters", turns the field red, and shows the ! icon
+- [x] If the password value doesn't fit theese characters ```(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/))``` then it makes the placeholder error message visible with the message "Password must be lower & upper case letter, number, and 6-20 in length", turns the field red, and shows the ! icon
+- [x] If the input fields are not empty and it doesn't have illegal characters then it turns the input boxes green and shows a checkmark
+ 
+#### Security Question Dynamicity
+- [x] Created a CSS styling ```invisible```, set the display to none, and also added the ```invisible``` class to all 3 security question answer
+- [x] Created a ```updateSecurity1View(), updateSecurity2View(), updateSecurity3View()``` to make the security question answer box hidden/visible
+- [x] Used ```classList.remove("invisible")``` to make the security question answer box visible if any of the question from the select list is selected
+- [x] Used ```classList.add("invisible")``` to make the security question answer box hidden if none of the question from the select list is selected
   

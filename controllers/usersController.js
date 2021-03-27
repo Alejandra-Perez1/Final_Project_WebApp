@@ -1,6 +1,6 @@
 "use strict";
 
-const User = require("../models/user"),
+const User = require("../models/signup"),
   getUserParams = body => {
     return {
       name: {

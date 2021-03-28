@@ -15,6 +15,12 @@ var userSchema = new Schema(
         trim: true
       }
     },
+    userName: {
+      type: String,
+      required: true,
+      lowercase: true,
+      unique: true
+    },
     email: {
       type: String,
       required: true,
@@ -44,6 +50,10 @@ var userSchema = new Schema(
         trim: true,
         required: true
     },
+    date: {
+      type: Date, 
+      trim: true
+  },
     biography: {
         type: String, 
         trim: true

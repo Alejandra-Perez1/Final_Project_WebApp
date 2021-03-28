@@ -1,11 +1,11 @@
-exports.showSignUp = ( req, res) => {
-    res.render("signup")
-}
+"use strict";
 
-exports.showIndex = (req,res) => {
+module.exports = {
+  index: (req, res) => {
     res.render("index");
+  }
+};
 
-}
-exports.showSignIn = ( req, res) => {
-    res.render("signin")
-}
+exports.showLoginForm = (req, res) => {
+    res.render("login");
+};

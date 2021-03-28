@@ -1,18 +1,20 @@
 "use strict";
 
-const User = require("../models/signup"),
+const User = require("../models/user"),
   getUserParams = body => {
     return {
       name: {
         first: body.first,
         last: body.last
       },
+      userName: body.userName,
       email: body.email,
       password: body.password,
       location: body.location,
       securityquestion1: body.securityquestion1,
       securityquestion2: body.securityquestion2,
       securityquestion3: body.securityquestion3,
+      date: body.date,
       biography: body.biography
     };
   };

@@ -1,124 +1,123 @@
-"use strict";
+const express = require('express');
+const router = express.Router();
+const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
-const User = require("../models/user"),
-  getUserParams = body => {
-    return {
-      name: {
-        first: body.first,
-        last: body.last
-      },
-      userName: body.userName,
-      email: body.email,
-      password: body.password,
-      location: body.location,
-      securityquestion1: body.securityquestion1,
-      securityquestion2: body.securityquestion2,
-      securityquestion3: body.securityquestion3,
-      date: body.date,
-      biography: body.biography
-    };
-  };
+//Load user model
+const User = require('../models/user');
+const { forwardAuthenticated } = require('../config/auth');
 
-module.exports = {
-  index: (req, res, next) => {
-    User.find()
-      .then(users => {
-        res.locals.users = users;
-        next();
-      })
-      .catch(error => {
-        console.log(`Error fetching users: ${error.message}`);
-        next(error);
-      });
-  },
-  indexView: (req, res) => {
-    res.render("users/index");
-  },
+//Load Login page
+router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
-  new: (req, res) => {
-    res.render("users/new");
-  },
+//Load Signup Page
+router.get('/signup', forwardAuthenticated, (req, res) => res.render('signup'));
 
-  create: (req, res, next) => {
-    let userParams = getUserParams(req.body);
+//Signup
+router.post('/signup', (req, res) => {
+  const { 
+    firstName, 
+    lastName, 
+    userName, 
+    email, 
+    password, 
+    password2, 
+    location,  
+    securityQuestion1Answer,
+    securityQuestion2Answer,
+    securityQuestion3Answer,
+    date,
+    biography
+  } = req.body;
 
-    User.create(userParams)
-      .then(user => {
-        res.locals.redirect = "/users";
-        res.locals.user = user;
-        next();
-      })
-      .catch(error => {
-        console.log(`Error saving user: ${error.message}`);
-        next(error);
-      });
-  },
+  let errors = [];
 
-  redirectView: (req, res, next) => {
-    let redirectPath = res.locals.redirect;
-    if (redirectPath !== undefined) res.redirect(redirectPath);
-    else next();
-  },
-
-  show: (req, res, next) => {
-    let userId = req.params.id;
-    User.findById(userId)
-      .then(user => {
-        res.locals.user = user;
-        next();
-      })
-      .catch(error => {
-        console.log(`Error fetching user by ID: ${error.message}`);
-        next(error);
-      });
-  },
-
-  showView: (req, res) => {
-    res.render("users/show");
-  },
-
-  edit: (req, res, next) => {
-    let userId = req.params.id;
-    User.findById(userId)
-      .then(user => {
-        res.render("users/edit", {
-          user: user
-        });
-      })
-      .catch(error => {
-        console.log(`Error fetching user by ID: ${error.message}`);
-        next(error);
-      });
-  },
-
-  update: (req, res, next) => {
-    let userId = req.params.id,
-      userParams = getUserParams(req.body);
-
-    User.findByIdAndUpdate(userId, {
-      $set: userParams
-    })
-      .then(user => {
-        res.locals.redirect = `/users/${userId}`;
-        res.locals.user = user;
-        next();
-      })
-      .catch(error => {
-        console.log(`Error updating user by ID: ${error.message}`);
-        next(error);
-      });
-  },
-
-  delete: (req, res, next) => {
-    let userId = req.params.id;
-    User.findByIdAndRemove(userId)
-      .then(() => {
-        res.locals.redirect = "/users";
-        next();
-      })
-      .catch(error => {
-        console.log(`Error deleting user by ID: ${error.message}`);
-        next();
-      });
+  if (!firstName || !lastName || !email || !userName || !password || !password2 || !location 
+    || !securityQuestion1Answer || !securityQuestion2Answer || !securityQuestion3Answer || !date || !biography) {
+    errors.push({ msg: 'All fields are required' });
   }
-};
+
+  if (password != password2) {
+    errors.push({ msg: 'Passwords do not match' });
+  }
+
+  if (password.length < 6) {
+    errors.push({ msg: 'Password must be at least 6 characters' });
+  }
+
+  if (errors.length > 0) {
+    res.render('signup', {
+      errors,
+      firstName,
+      lastName,
+      userName,
+      email,
+      password,
+      password2,
+      location,  
+      securityQuestion1Answer,
+      securityQuestion2Answer,
+      securityQuestion3Answer,
+      date,
+      biography
+    });
+  } else {
+    User.findOne({ username: userName }).then(user => {
+      if (user) {
+        errors.push({ msg: 'User Name already exists' });
+        res.render('signup', {
+          errors,
+          firstName,
+          lastName,
+          userName,
+          email,
+          password,
+          password2,
+          location,  
+          securityQuestion1Answer,
+          securityQuestion2Answer,
+          securityQuestion3Answer,
+          date,
+          biography
+        });
+      } else {
+        const newUser = new User({
+          firstName,
+          lastName,
+          userName,
+          email,
+          password
+        });
+
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err;
+            newUser.password = hash;
+            newUser
+              .save()
+              .then(user => {
+                req.flash(
+                  'success_msg',
+                  'Account creation successful, please log in'
+                );
+                res.redirect('/users/login');
+              })
+              .catch(err => console.log(err));
+          });
+        });
+      }
+    });
+  }
+});
+
+// Login
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/home',
+    failureRedirect: '/users/login',
+    failureFlash: true
+  })(req, res, next);
+});
+
+
+module.exports = router;

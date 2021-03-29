@@ -1,13 +1,12 @@
-"use strict";
-
 const mongoose = require("mongoose"),
 { Schema } = require("mongoose");
 
-var userSchema = new Schema(
+var UserSchema = new Schema(
   {
     name: {
       first: {
         type: String,
+        required: true,
         trim: true
       },
       last: {
@@ -52,7 +51,7 @@ var userSchema = new Schema(
     },
     date: {
       type: Date, 
-      trim: true
+      default: Date.now
   },
     biography: {
         type: String, 
@@ -64,8 +63,8 @@ var userSchema = new Schema(
   }
 );
 
-userSchema.virtual("fullName").get(function() {
+UserSchema .virtual("fullName").get(function() {
   return `${this.name.first} ${this.name.last}`;
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", UserSchema );

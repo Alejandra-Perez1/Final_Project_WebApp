@@ -2,19 +2,19 @@
 
 const express = require("express"),
   layouts = require("express-ejs-layouts"),
+  app = express(),
   router = express.Router(),
-  passport = require('passport'),
-  flash = require('connect-flash'),
-  session = require('express-session'),
   homeController = require("./controllers/homeController"),
   errorController = require("./controllers/errorController"),
   usersController = require("./controllers/usersController.js"),
   mongoose = require("mongoose"),
-  app = express(),
-  methodOverride = require("method-override");
-
-// Passport Config
-require('./config/passport')(passport);
+  methodOverride = require("method-override"),
+  passport = require("passport"),
+  cookieParser = require("cookie-parser"),
+  expressSession = require("express-session"),
+  expressValidator = require("express-validator"),
+  connectFlash = require("connect-flash"),
+  User = require("./models/user");
 
 //Database
 mongoose.connect(
@@ -26,8 +26,6 @@ mongoose.set("useCreateIndex", true);
 //EJS
 app.set("port", process.env.PORT || 3000);
 app.set("view engine", "ejs");
-router.use(layouts);
-router.use(express.static("public"));
 
 //Method Override
 router.use(
@@ -36,48 +34,66 @@ router.use(
   })
 );
 
+router.use(layouts);
+router.use(express.static("public"));
+router.use(expressValidator());
+
 //Express body parser
 router.use(
   express.urlencoded({
-    extended: true
+    extended: false
   })
 );
+router.use(express.json());
 
 // Express session
-app.use(
-  session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
+router.use(cookieParser("secretChitterChatter123"));
+router.use(
+  expressSession({
+    secret: "secretChitterChatter123",
+    cookie: {
+      maxAge: 4000000
+    },
+    resave: false,
+    saveUninitialized: false
   })
 );
+router.use(connectFlash());
 
 // Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
+router.use(passport.initialize());
+router.use(passport.session());
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-// Connect flash
-app.use(flash());
-
-// Global variables
-app.use(function(req, res, next) {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
+router.use((req, res, next) => {
+  res.locals.loggedIn = req.isAuthenticated();
+  res.locals.currentUser = req.user;
+  res.locals.flashMessages = req.flash();
   next();
 });
 
-router.use(express.json());
-
 // Routes
-router.use("/", require('./controllers/homeController.js'));
-app.use('/', require('./controllers/errorController.js'));
-app.use('/users', require('./controllers/usersController.js'));
+router.get("/", homeController.index);
+router.get("/users", usersController.index, usersController.indexView);
+router.post(
+  "/users/create",
+  usersController.validate,
+  usersController.create,
+  usersController.redirectView
+);
+router.get("/users/login", usersController.login);
+router.post("/users/login", usersController.authenticate);
+router.get("/users/logout", usersController.logout, usersController.redirectView);
+router.get("/users/:id/edit", usersController.edit);
+//router.put("/users/:id/update", usersController.update, usersController.redirectView);
+router.get("/users/:id", usersController.show, usersController.showView);
 
 router.use(errorController.pageNotFoundError);
 router.use(errorController.internalServerError);
 
-// app.use("/", router);
+app.use("/", router);
 
 app.listen(app.get("port"), () => {
   console.log(`Server running at http://localhost:${app.get("port")}`);

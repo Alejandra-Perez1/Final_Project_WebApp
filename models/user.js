@@ -1,12 +1,14 @@
-const mongoose = require("mongoose"),
-{ Schema } = require("mongoose");
+"use strict";
 
-var UserSchema = new Schema(
+const mongoose = require("mongoose"),
+  { Schema } = require("mongoose"),
+  passportLocalMongoose = require("passport-local-mongoose");
+
+var userSchema = new Schema(
   {
     name: {
       first: {
         type: String,
-        required: true,
         trim: true
       },
       last: {
@@ -14,13 +16,13 @@ var UserSchema = new Schema(
         trim: true
       }
     },
-    userName: {
+    email: {
       type: String,
       required: true,
       lowercase: true,
       unique: true
     },
-    email: {
+    userName: {
       type: String,
       required: true,
       lowercase: true,
@@ -31,40 +33,44 @@ var UserSchema = new Schema(
       required: true
     },
     location: {
-        type: String,
-        trim: true
-    },
-    securityquestion1: {
-        type: String,
-        trim: true,
-        required: true
-    },
-    securityquestion2: {
-        type: String,
-        trim: true,
-        required: true
-    },
-    securityquestion3: {
-        type: String,
-        trim: true,
-        required: true
-    },
-    date: {
-      type: Date, 
-      default: Date.now
+      type: String,
+      trim: true
   },
-    biography: {
-        type: String, 
-        trim: true
-    }
+  securityQuestion1Answer: {
+      type: String,
+      trim: true,
+      required: true
+  },
+  securityQuestion2Answer: {
+      type: String,
+      trim: true,
+      required: true
+  },
+  securityQuestion3Answer: {
+      type: String,
+      trim: true,
+      required: true
+  },
+  date: {
+    type: Date, 
+    default: Date.now
+},
+  biography: {
+      type: String, 
+      trim: true
+  }
   },
   {
     timestamps: true
   }
 );
 
-UserSchema .virtual("fullName").get(function() {
+userSchema.virtual("fullName").get(function() {
   return `${this.name.first} ${this.name.last}`;
 });
 
-module.exports = mongoose.model("User", UserSchema );
+userSchema.plugin(passportLocalMongoose, {
+  usernameField: "email"
+});
+
+module.exports = mongoose.model("User", userSchema);

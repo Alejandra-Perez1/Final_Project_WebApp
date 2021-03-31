@@ -85,6 +85,32 @@
               <a href="#more"><i class="fa fa-fw fa-ellipsis-h"></i> More</a>
             </li>
           </ul>
+          <div class="login">
+            <% if (loggedIn) { %>
+            <p>Logged in as
+              <a href="<%=`/users/${currentUser._id}`%>">
+                <%= currentUser.fullName %></a>
+              <span class="log-out">
+                <a href="/users/logout">Log out</a>
+              </span>
+            </p>
+            <%} else {%>
+            <a href="/users/login">Log In</a>
+            <% } %>
+          </div>
+          <div class="flashes">
+            <% if (flashMessages) { %>
+            <% if (flashMessages.success) { %>
+            <div class="flash success">
+              <%= flashMessages.success %>
+            </div>
+            <% } else if (flashMessages.error) { %>
+            <div class="flash error">
+              <%= flashMessages.error %>
+            </div>
+            <% } %>
+            <% } %>
+          </div>
           <a class="btn btn-primary btn-sm " href="#" role="button">Post</a>
         </div>
         <div class="col-6 border border-1 rounded">
@@ -112,6 +138,11 @@
         </div>
       </div>
     </section>
+
+    <div class="container">
+      <%- body %>
+    </div>
+    
     <footer class="text-center">
       @2021 Chitter-Chatter
     </footer>

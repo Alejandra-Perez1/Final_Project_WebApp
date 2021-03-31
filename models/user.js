@@ -28,10 +28,6 @@ var userSchema = new Schema(
       lowercase: true,
       unique: true
     },
-    password: {
-      type: String,
-      required: true
-    },
     location: {
       type: String,
       trim: true

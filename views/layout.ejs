@@ -1,150 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Chitter-Chatter</title>
-    <meta charset="utf-8" />
+<html>
 
-    <!-- This line will help the website look great in any screen size -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- import stylesheet -->
-    <link rel="stylesheet" href="../public/home-page/home-page.css" />
-    <!-- <link rel="stylesheet" href="../GlobalCSS/style.css" /> -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+	<title>Chitter Chatter</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="/public/css/Chitter_Chatter.css"> -->
+  <link rel="stylesheet" href="/css/Chitter_Chatter.css">
+</head>
 
-    <!-- import bootstrap-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-    <!-- icons link - font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
+<body>
+	<div id="nav">
+		<div class="col-sm nav-align">
+			<h1 id="title">Chitter~Chatter</h1>
+		</div>
+		<div class="col-sm nav-align">
+			<a href="/">
+				<span class="button">Home</span>
+			</a>
+			<a href="/user/signup">
+				<span class="button">Sign Up</span>
+			</a>
+      <a href="/tweet">
+				<span class="button">Tweet</span>
+			</a>
+		</div>
 
-  <body>
-    <nav class="navbar navbar-light bg-light navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="https://cdn.glitch.com/eedd7988-6291-440f-9057-f1ade3a9d518%2Flogo.jpg?v=1614207428544"
-            alt="logo" 
-          />
-        </a>
+		<div class="login">
+			<% if (loggedIn) { %>
+			<p>Logged in as
+				<a href="<%=`/users/${currentUser._id}`%>">
+					<%= currentUser.fullName %></a>
+				<span class="log-out">
+					<a href="/users/logout">Log out</a>
+				</span>
+			</p>
+			<%} else {%>
+			<a href="/users/login">Log In</a>
+			<% } %>
+		</div>
+	</div>
+	<div class="flashes">
+		<% if (flashMessages) { %>
+		<% if (flashMessages.success) { %>
+		<div class="flash success">
+			<%= flashMessages.success %>
+		</div>
+		<% } else if (flashMessages.error) { %>
+		<div class="flash error">
+			<%= flashMessages.error %>
+		</div>
+		<% } %>
+		<% } %>
+	</div>
 
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
-          </li>
-          <!--<li class="nav-item">
-          <a class="nav-link" href="#">Notifications</a>
-        </li> -->
-          <li class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search Chitter-Chatter"
-              aria-label="Search"
-            />
-            <button class="btn btn-primary" type="submit">Search</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+	<div class="container">
+		<%- body %>
+	</div>
 
-    <section>
-      <div class="row d-flex flex-row justify-content-center bd-highlight">
-        <div class="col  border border-1 rounded ">
-          <ul class="nav">
-            <li class="nav-item">
-              <!--  <a class="nav-link active" aria-current="page" href="#"> </a>-->
-              <a href="#explore"><i class="fa fa-fw fa-hashtag"></i> Explore</a>
-            </li>
-          </ul>
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="#notifications"
-                ><i class="fa fa-fw fa-bell"></i> Notifications</a
-              >
-            </li>
-          </ul>
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="#messages"
-                ><i class="fa fa-fw fa-envelope"></i> Messages</a
-              >
-            </li>
-          </ul>
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="#more"><i class="fa fa-fw fa-ellipsis-h"></i> More</a>
-            </li>
-          </ul>
-          <div class="login">
-            <% if (loggedIn) { %>
-            <p>Logged in as
-              <a href="<%=`/users/${currentUser._id}`%>">
-                <%= currentUser.fullName %></a>
-              <span class="log-out">
-                <a href="/users/logout">Log out</a>
-              </span>
-            </p>
-            <%} else {%>
-            <a href="/users/login">Log In</a>
-            <% } %>
-          </div>
-          <div class="flashes">
-            <% if (flashMessages) { %>
-            <% if (flashMessages.success) { %>
-            <div class="flash success">
-              <%= flashMessages.success %>
-            </div>
-            <% } else if (flashMessages.error) { %>
-            <div class="flash error">
-              <%= flashMessages.error %>
-            </div>
-            <% } %>
-            <% } %>
-          </div>
-          <a class="btn btn-primary btn-sm " href="#" role="button">Post</a>
-        </div>
-        <div class="col-6 border border-1 rounded">
-          <div class="input-group mb-3">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="What's happening?"
-              aria-label="What's happening?"
-              
-            />
-            <button class="btn btn-primary" type="button" id="post">
-              Post
-            </button>
-          </div>
-        </div>
+</body>
 
-        <!-- Column 3-->
-        <div class="col border border-1 rounded d-flex flex-column">
-          <div class="col-12 border-col4 rounded ">
-            <h3>
-              What's Happening?
-            </h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container">
-      <%- body %>
-    </div>
-    
-    <footer class="text-center">
-      @2021 Chitter-Chatter
-    </footer>
-  </body>
 </html>

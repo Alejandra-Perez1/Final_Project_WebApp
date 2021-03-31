@@ -8,6 +8,11 @@ body {
   background-image: url(../images/birdbackground.jpg);
 }
 
+.logo{
+  width: 70px;
+  border-radius: 50%;
+}
+
 .container {
   background-color: #fff;
   border-radius: 5px;

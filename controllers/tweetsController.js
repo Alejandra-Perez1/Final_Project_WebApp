@@ -1,6 +1,6 @@
 "use strict";
 
-const tweet = require("../models/tweet"),
+const Tweet = require("../models/tweet"),
   getTweetParams = body => {
     return {
       title: body.title,

@@ -7,12 +7,12 @@ const express = require("express"),
   homeController = require("./controllers/homeController"),
   errorController = require("./controllers/errorController"),
   usersController = require("./controllers/usersController.js"),
+  tweetsController = require("./controllers/tweetsController.js"),
   mongoose = require("mongoose"),
   methodOverride = require("method-override"),
   passport = require("passport"),
   cookieParser = require("cookie-parser"),
   expressSession = require("express-session"),
-  //expressValidator = require("express-validator"),
   expressValidator = require('express'),
   connectFlash = require("connect-flash"),
   User = require("./models/user");
@@ -75,9 +75,10 @@ router.use((req, res, next) => {
   next();
 });
 
-// Routes
+// User Routes
 router.get("/", homeController.index);
 router.get("/users", usersController.index, usersController.indexView);
+router.get("/users/new", usersController.new);
 router.post(
   "/users/create",
   usersController.validate,
@@ -88,8 +89,18 @@ router.get("/users/login", usersController.login);
 router.post("/users/login", usersController.authenticate);
 router.get("/users/logout", usersController.logout, usersController.redirectView);
 router.get("/users/:id/edit", usersController.edit);
-//router.put("/users/:id/update", usersController.update, usersController.redirectView);
+router.put("/users/:id/update", usersController.update, usersController.redirectView);
 router.get("/users/:id", usersController.show, usersController.showView);
+router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
+
+//Tweets Routes
+router.get("/tweets", tweetsController.index, tweetsController.indexView);
+router.get("/tweets/new", tweetsController.new);
+router.post("/tweets/create", tweetsController.create, tweetsController.redirectView);
+router.get("/tweets/:id/edit", tweetsController.edit);
+router.put("/tweets/:id/update", tweetsController.update, tweetsController.redirectView);
+router.get("/tweets/:id", tweetsController.show, tweetsController.showView);
+router.delete("/tweets/:id/delete", tweetsController.delete, tweetsController.redirectView);
 
 router.use(errorController.pageNotFoundError);
 router.use(errorController.internalServerError);

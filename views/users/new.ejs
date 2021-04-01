@@ -10,172 +10,84 @@
 
   <body>
         <div class="container data-form">
-          <img src="../images/logo.jpg" alt="logo" />
-            <header>Chitter-Chatter</header>
-            <h1>Sign Up</h1>
-        
-        <form class="form" id="form" action="/users/create" method="POST" autofocus>
-          <div class="form-control">
-            <label for="firstName" class="col-sm-2 col-form-label">First Name:</label>
-            <input type="text" id="firstName" name="firstName" placeholder="John"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
-          </div>
+        <form class="form-signin row mt-8" id="form" action="/users/create" method="POST">
+          <div class="col-md-8 m-auto">
+            <div class="card card-body text-center">
+              <img src="../images/logo.jpg" alt="logo" />
+              <h2 class="form-signin-heading">Sign Up </h2>
 
-          <div class="form-control">
-              <label for="lastName" class="col-sm-2 col-form-label">Last Name:</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Doe"/>
-              <i class="fa fa-check-circle"></i>
-              <i class="fa fa-exclamation-circle"></i>
-              <small> Error Message </small>
-          </div>
-
-          <div class="form-control"> 
-            <label for="userName" class="col-sm-2 col-form-label">Username:</label>
-            <input type="text" id="userName" name="userName" placeholder="JhonDoe123"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
-          </div>
-
-          <div class="form-control">
-            <label for="email" class="col-sm-2 col-form-label">Email:</label>
-            <input type="email" class="input-box" id="email" name="email" placeholder="user@example.com"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
-          </div>
-
-          <div class="form-control">
-            <label for="password" class="col-sm-2 col-form-label">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Password"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
-          </div>
-
-          <div class="form-control">
-            <label for="password2" class="col-sm-2 col-form-label">Confirm Password:</label>
-            <input type="password" id="password2" name="password2" placeholder="Password"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
-          </div>
-          <div class=" form-group row">
-            <label class="col-sm-2 col-form-label">Gender:</label>
-
-            <div class="form-check">
-              <input type="radio" id="rbMale" name="gender" value="male" class="form-check-input">
-                <label for="rbMale" class="form-check-label">Male</label>
-                 
-                <input type="radio" id="rbFemale" name="gender" value="female" class="form-check-input">
-                <label for="rbFemale" class="form-check-label"> Female </label>
-                 
-                <input type="radio" id="rbOther" name="gender" value="other" class="form-check-input">
-                <label for="rbOther" class="form-check-label">Other</label>
-              </div>
-            </div>
-            <br>
-
-          <div class="form-control">
-            <label for="location" class="col-sm-2 col-form-label">Location:</label>
-            <input type="text" id="location" placeholder="Denver" />
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
-          </div>
-
-          <div class="form-control">
-            <label for="date" class="col-sm-2 col-form-label">Date:</label>
-            <input type="date" id="date" name="date"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
-          </div>
-
-          <div class="striped-border"></div>
-          <div class="form-control">
-            <label for="securityquestion1" class="col-sm-2 col-form-label" style="font-size: 18px">
-              Security Question 1
-            </label>
-          </div>
-
-          <div class="form-control">
-            <select id="securityquestion1" name="securityquestion1" class="form-check-input" onchange="updateSecurity1View()">
-              <option value="securityquestion1_q0"></option>
-              <option value="securityquestion1_q1">What is the city you were born in?</option>
-              <option value="securityquestion1_q2">What is your mother's maiden name?</option>
-              <option value="securityquestion1_q3"> What is the the color of your first car? </option>
-            </select>
-              <div id="securityQuestion1Answer" class="row form-group invisible">
-                <input type="text" id="securityQuestion1Answer" class="input-box" placeholder="Your Answer"/>
+                <label for="inputFirstName">First Name:</label>
+                <input type="text" id="inputFirstName" name="first" placeholder="John" autofocus/>
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
                 <small> Error Message </small>
+                <br>
+
+                <label for="inputLastName">Last Name:</label>
+                <input type="text" id="inputLastName" name="last" placeholder="Doe"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+                <br>
+                
+                <label for="userName">Username:</label>
+                <input type="text" id="userName" name="userName" placeholder="JhonDoe123"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+                <br>
+
+                <label for="inputEmail">Email:</label>
+                <input type="email" class="input-box" id="inputEmail" name="email" placeholder="user@example.com"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+                <br>
+
+                <label for="inputPassword">Password:</label>
+                <input type="password" id="inputPassword" name="password" placeholder="Password"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+                <br>
+
+                <label for="password2">Confirm Password:</label>
+                <input type="password" id="password2" name="password2" placeholder="Password"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+                <br>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" placeholder="Denver" />
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+                <br>
+
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date"/>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+                <br>
+
+                <div class="striped-border"></div>
+                
+                <button type="submit" class="btn btn-lg btn-primary btn-block" >Sign Up</button>
+                <hr/>
+                <button type="reset" class="reset-btn btn btn-lg btn-primary btn-block">Reset</button>
+                <hr/>
+      
+                <p class="or">OR</p>
+                <p> Already have an account? <a href="/users/login">Log In</a></p>
+
+                <footer>@Copyright of ChitterChatter 2021</footer>
+              </div>
             </div>
           </div>
-
-          <div class="form-control">
-            <label for="securityquestion2" class="col-sm-2 col-form-label" style="font-size: 18px">
-              Security Question 2
-            </label>
-          </div>
-
-          <div class="form-control">
-            <select id="securityquestion2" name="securityquestion2" class="form-check-input" onchange="updateSecurity2View()">
-              <option value="securityquestion2_q0"></option>
-              <option value="securityquestion2_q1"> What is the city you were born in?</option>
-              <option value="securityquestion2_q2">What is your mother's maiden name?</option>
-              <option value="securityquestion2_q3">What is the the color of your first car?</option>
-            </select>
-            <div id="securityQuestion2Answer" class="row form-group invisible">
-              <input type="text" id="securityQuestion2Answer" class="input-box" placeholder="Your Answer"/>
-              <i class="fa fa-check-circle"></i>
-              <i class="fa fa-exclamation-circle"></i>
-              <small> Error Message </small>
-          </div>
-          </div>
-          <div class="form-control">
-            <label for="securityquestion3" class="col-sm-2 col-form-label" style="font-size: 18px">
-              Security Question 3
-            </label>
-          </div>
-          <div class="form-control">
-            <select id="securityquestion3" name="securityquestion3" class="form-check-input" onchange="updateSecurity3View()">
-              <option value="securityquestion3_q0"></option>
-              <option value="securityquestion3_q1"> What is the city you were born in?</option>
-              <option value="securityquestion3_q2">What is your mother's maiden name?</option>
-              <option value="securityquestion3_q3"> What is the the color of your first car?</option>
-            </select>
-            <div id="securityQuestion3Answer" class="row form-group invisible">
-              <input type="text" id="securityQuestion3Answer" class="input-box" placeholder="Your Answer"/>
-              <i class="fa fa-check-circle"></i>
-              <i class="fa fa-exclamation-circle"></i>
-              <small> Error Message </small>
-            </div>
-          </div>
-          <div class="striped-border"></div>
-
-          <div class="form-control"> 
-            <label for="biography" class="col-sm-2 col-form-label">Biography:</label>
-            <input type="text" id="biography" name="biography" placeholder="Student"/>
-            <i class="fa fa-check-circle"></i>
-            <i class="fa fa-exclamation-circle"></i>
-            <small> Error Message </small>
-          </div>
-          
-          <button type="submit">Sign Up</button>
-          <hr/>
-          <button type="reset" class="reset-btn">Reset</button>
-          <hr/>
-
-          <p class="or">OR</p>
-          <p> Already have an account? <a href="/users/login">Log In</a></p>
 
       </form>
-
-      <footer>@Copyright of ChitterChatter 2021</footer>
     </div>
 
     <script src="../public/sign-up/signup.js"></script>

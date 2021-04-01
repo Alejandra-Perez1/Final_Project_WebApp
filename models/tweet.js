@@ -12,7 +12,10 @@ var tweetSchema = new Schema(
     },
     description: {
       type: String,
-      required: true
+      required: true,
+      length: 250,
+      min: [10, "Tweet can't be empty"],
+
     }
   },
   {

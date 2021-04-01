@@ -86,8 +86,39 @@ Technologies:
 - [x] Used ```classList.add("invisible")``` to make the security question answer box hidden if none of the question from the select list is selected
   
   
-  ### Assignment 3
-  #### This assignmet covers portion of the backend for our social media final project.
-  -[x] We added capability for users to sign up and to sign in
-  -[x]
+### Assignment 3
+#### This assignmet covers portion of the backend for our social media final project.
+- [x] We added capability for users to sign up and to sign in
+- [x] This was created using Express, EJS. and MongoDB for data storage.
+- [x] Created a MVC-compliant directory and application structure including public, views, models, and controllers
+- [x] Defined a User model along with a schema included for signing up.
+- [x] A seed.js file was added to the root directory to populate data.
+
+#### Database
+- [x] Added a Users collections with fields defined in the user model for the app. 
+
+#### To run the database
+- [x] in the command line type ........
+
+#### Controllers
+- [x] Added a usersController.js to handle when users sign up and sign in
+- [x] Contains two GET request to log in and sign up redirecting to signup.ejs and login.ejs respectively. If there is an error in both, it renders to the ejs file with an error message. `router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));` , `router.get('/signup', forwardAuthenticated, (req, res) => res.render('signup'));`. 
+- [x] Containes a POST request to save user's data into the database. `router.post('/signup', (req, res) => {` 
+- [x] Added an errorController in the controllers directory which handles generic error messages such as 404 and 500.
+- [x] Added a homeController iin the controllers directory to handle GET requests to the home directory.
+
+#### Views
+- [x]  Added a layout.ejs to handle a basic layout for all the pages. It includes a header, navigation bar, a footer and extra libraries we used to make the app look pretty. 
+- [x]  Modified the signup.ejs adding the correct action, method and possible error messages.
+- [x]  Modified the loging.ejs adding the correct action, method and possible error messages.
+- [x]  error.ejs renders the page when an error happens with an appropiate message.
+
+
+#### Steps for how to launch the server 
+1. 
+
+
+
+
+
   

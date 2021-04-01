@@ -85,3 +85,9 @@ Technologies:
 - [x] Used ```classList.remove("invisible")``` to make the security question answer box visible if any of the question from the select list is selected
 - [x] Used ```classList.add("invisible")``` to make the security question answer box hidden if none of the question from the select list is selected
   
+  
+  ### Assignment 3
+  #### This assignmet covers portion of the backend for our social media final project.
+  -[x] We added capability for users to sign up and to sign in
+  -[x]
+  

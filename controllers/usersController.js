@@ -37,7 +37,7 @@ module.exports = {
   },
 
   new: (req, res) => {
-    res.render("users/signup");
+    res.render("users/new");
   },
 
   create: (req, res, next) => {
@@ -50,7 +50,7 @@ module.exports = {
         next();
       } else {
         req.flash("error", `Failed to create user account because: ${e.message}.`);
-        res.locals.redirect = "/users/signup";
+        res.locals.redirect = "/users/new";
         next();
       }
     });
@@ -145,7 +145,7 @@ module.exports = {
         let messages = error.array().map(e => e.msg);
         req.skip = true;
         req.flash("error", messages.join(" and "));
-        res.locals.redirect = "/users/signup";
+        res.locals.redirect = "/users/new";
         next();
       } else {
         next();

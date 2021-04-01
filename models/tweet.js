@@ -5,21 +5,19 @@ const mongoose = require("mongoose"),
 
 var tweetSchema = new Schema(
   {
-    tweet: {
+    title: {
       type: String,
-      length: 250,
-      min: [0, "Tweet can't be empty"],
       required: true,
-      
+      unique: true
     },
-    tweetDate: {
-      type: Date,
+    description: {
+      type: String,
       required: true
-    },
+    }
   },
   {
     timestamps: true
   }
 );
 
-module.exports = mongoose.model("Course", tweetSchema);
+module.exports = mongoose.model("Tweet", tweetSchema);

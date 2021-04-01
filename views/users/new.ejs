@@ -14,7 +14,7 @@
             <header>Chitter-Chatter</header>
             <h1>Sign Up</h1>
         
-        <form class="form" id="form" action="/users/signup" method="POST">
+        <form class="form" id="form" action="/users/create" method="POST" autofocus>
           <div class="form-control">
             <label for="firstName" class="col-sm-2 col-form-label">First Name:</label>
             <input type="text" id="firstName" name="firstName" placeholder="John"/>
@@ -171,7 +171,7 @@
           <hr/>
 
           <p class="or">OR</p>
-          <p> Already have an account? <a href="../sign-in/signin.html">Sign In</a></p>
+          <p> Already have an account? <a href="/users/login">Log In</a></p>
 
       </form>
 

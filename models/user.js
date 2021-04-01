@@ -28,40 +28,45 @@ var userSchema = new Schema(
       lowercase: true,
       unique: true
     },
+    password: {
+      type: String,
+      required: true
+    },
     location: {
       type: String,
       trim: true
-  },
-  securityQuestion1Answer: {
+    },
+    securityQuestion1Answer: {
       type: String,
       trim: true,
       required: true
-  },
-  securityQuestion2Answer: {
+    },
+    securityQuestion2Answer: {
       type: String,
       trim: true,
       required: true
-  },
-  securityQuestion3Answer: {
+    },
+    securityQuestion3Answer: {
       type: String,
       trim: true,
       required: true
-  },
-  date: {
-    type: Date, 
-    default: Date.now
-},
-  biography: {
-      type: String, 
+    },
+    date: {
+      type: Date,
+      default: Date.now
+    },
+    biography: {
+      type: String,
       trim: true
-  }
+    },
+    tweets: [{ type: Schema.Types.ObjectId, ref: "Tweet" }]
   },
   {
     timestamps: true
   }
 );
 
-userSchema.virtual("fullName").get(function() {
+userSchema.virtual("fullName").get(function () {
   return `${this.name.first} ${this.name.last}`;
 });
 

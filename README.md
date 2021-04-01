@@ -115,7 +115,14 @@ Technologies:
 
 
 #### Steps for how to launch the server 
-1. 
+1. Open a terminal window (Mac) or a command window (Windows), and navigate (cd) to the ionic-tutorial/server directory
+
+2. Install the server dependencies:
+npm install
+
+3. Start the server:
+node server
+If you get an error, make sure you don't have another server listening on port 3000.
 
 
 

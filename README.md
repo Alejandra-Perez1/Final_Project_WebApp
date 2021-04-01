@@ -98,7 +98,10 @@ Technologies:
 - [x] Added a Users collections with fields defined in the user model for the app. 
 
 #### To run the database
-- [x] in the command line type ........
+- [x] Open the project in terminal
+- [x] Run ```npm install``` to install the mongoose package
+- [x] Run ```mongod``` to have the MongoDB server running in the background
+- [x] Sign up to create a account and log in with that account to see if the datbase/backend works
 
 #### Controllers
 - [x] Added a usersController.js to handle when users sign up and sign in
@@ -123,9 +126,3 @@ npm install
 3. Start the server:
 node server
 If you get an error, make sure you don't have another server listening on port 3000.
-
-
-
-
-
-  

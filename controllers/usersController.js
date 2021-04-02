@@ -12,9 +12,9 @@ const User = require("../models/user"),
       userName: body.userName,
       password: body.password,
       location: body.location,
-      securityQuestion1Answer: body.securityQuestion1Answer,
-      securityQuestion2Answer: body.securityQuestion2Answer,
-      securityQuestion3Answer: body.securityQuestion3Answer,
+      // securityQuestion1Answer: body.securityQuestion1Answer,
+      // securityQuestion2Answer: body.securityQuestion2Answer,
+      // securityQuestion3Answer: body.securityQuestion3Answer,
       date: body.date,
       biography: body.biography
     };
@@ -137,7 +137,6 @@ module.exports = {
     req
       .check("userName", "User Name is invalid")
       .notEmpty()
-      .isInt()
       .equals(req.body.userName);
     req.check("password", "Password cannot be empty").notEmpty();
     req.getValidationResult().then(error => {

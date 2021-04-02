@@ -17,6 +17,7 @@ var contacts = [
         email: "jasonwhite@gmail.com",
         password: "jasonPass",
         location: "Denver",
+        date: 3/15/1995, 
         biography: "I am a teacher"
     },
     { name: {
@@ -26,6 +27,7 @@ var contacts = [
         email: "jensterling@gmail.com",
         password: "password123",
         location: "Texas",
+        date: 1/1/1975,
         biography: "I am a art student"
     },
     { name: {
@@ -35,6 +37,7 @@ var contacts = [
         email: "priyamadhok@gmail.com",
         password: "password@12345",
         location: "India",
+        date: 12/9/1980,
         biography: "I am a engineer"
     },
 ];
@@ -51,6 +54,7 @@ contacts.forEach(c => {
           email: c.email,
           password: c.password,
           location: c.location,
+          date: c.date,
           biography: c.biography
     })
   );

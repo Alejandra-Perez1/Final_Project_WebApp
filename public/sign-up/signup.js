@@ -8,9 +8,9 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const userLocation = document.getElementById('location');
 const date = document.getElementById('date');
-const securityQuestion1Answer = document.getElementById('securityQuestion1Answer');
-const securityQuestion2Answer = document.getElementById('securityQuestion2Answer');
-const securityQuestion3Answer = document.getElementById('securityQuestion3Answer');
+// const securityQuestion1Answer = document.getElementById('securityQuestion1Answer');
+// const securityQuestion2Answer = document.getElementById('securityQuestion2Answer');
+// const securityQuestion3Answer = document.getElementById('securityQuestion3Answer');
 const biography = document.getElementById('biography')
 
 form.addEventListener('submit', e => {
@@ -98,31 +98,31 @@ function checkInputs() {
 	}
 
 	//Security Question empty value, illegal character check
-	if(securityQuestion1Answer.value === '' || securityQuestion1Answer.value == null ) {
-		setErrorFor(securityQuestion1Answer, 'Security Question cannot be blank');
-	} else if (securityQuestion1Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
-		setErrorFor(securityQuestion1Answer, 'Illegal Character');
-	}else {
-		setSuccessFor(securityQuestion1Answer);
-	}
+	// if(securityQuestion1Answer.value === '' || securityQuestion1Answer.value == null ) {
+	// 	setErrorFor(securityQuestion1Answer, 'Security Question cannot be blank');
+	// } else if (securityQuestion1Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+	// 	setErrorFor(securityQuestion1Answer, 'Illegal Character');
+	// }else {
+	// 	setSuccessFor(securityQuestion1Answer);
+	// }
 
 	//Security Question empty value, illegal character check
-	if(securityQuestion2Answer.value === '' || securityQuestion2Answer.value == null ) {
-		setErrorFor(securityQuestion2Answer, 'Security Question cannot be blank');
-	} else if (securityQuestion2Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
-		setErrorFor(securityQuestion2Answer, 'Illegal Character');
-	}else {
-		setSuccessFor(securityQuestion2Answer);
-	}
+	// if(securityQuestion2Answer.value === '' || securityQuestion2Answer.value == null ) {
+	// 	setErrorFor(securityQuestion2Answer, 'Security Question cannot be blank');
+	// } else if (securityQuestion2Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+	// 	setErrorFor(securityQuestion2Answer, 'Illegal Character');
+	// }else {
+	// 	setSuccessFor(securityQuestion2Answer);
+	// }
 
 	//Security Question empty value, illegal character check
-	if(securityQuestion3Answer.value === '' || securityQuestion3Answer.value == null ) {
-		setErrorFor(securityQuestion3Answer, 'Security Question cannot be blank');
-	} else if (securityQuestion3Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
-		setErrorFor(securityQuestion3Answer, 'Illegal Character');
-	}else {
-		setSuccessFor(securityQuestion3Answer);
-	}
+	// if(securityQuestion3Answer.value === '' || securityQuestion3Answer.value == null ) {
+	// 	setErrorFor(securityQuestion3Answer, 'Security Question cannot be blank');
+	// } else if (securityQuestion3Answer.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
+	// 	setErrorFor(securityQuestion3Answer, 'Illegal Character');
+	// }else {
+	// 	setSuccessFor(securityQuestion3Answer);
+	// }
 
 	//Biography Question empty value, illegal character check
 	if (biography.value.match(/[\<\>!@#{}()\$%^&\*,'"`]+/i) ) {
@@ -148,47 +148,47 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-function updateSecurity1View(){
-    var securityquestion1 = document.getElementById("securityquestion1");
-    var securityQuestion1Answer = document.getElementById("securityQuestion1Answer");
+// function updateSecurity1View(){
+//     var securityquestion1 = document.getElementById("securityquestion1");
+//     var securityQuestion1Answer = document.getElementById("securityQuestion1Answer");
 
-    if(securityquestion1.value == "securityquestion1_q1"){
-        securityQuestion1Answer.classList.remove("invisible");
-    }else if (securityquestion1.value == "securityquestion1_q2"){
-        securityQuestion1Answer.classList.remove("invisible");
-    }else if (securityquestion1.value == "securityquestion1_q3"){
-        securityQuestion1Answer.classList.remove("invisible");
-    }else {
-		securityQuestion1Answer.classList.remove("invisible");
-	}
-}
+//     if(securityquestion1.value == "securityquestion1_q1"){
+//         securityQuestion1Answer.classList.remove("invisible");
+//     }else if (securityquestion1.value == "securityquestion1_q2"){
+//         securityQuestion1Answer.classList.remove("invisible");
+//     }else if (securityquestion1.value == "securityquestion1_q3"){
+//         securityQuestion1Answer.classList.remove("invisible");
+//     }else {
+// 		securityQuestion1Answer.classList.remove("invisible");
+// 	}
+// }
 
-function updateSecurity2View() {
-	var securityquestion2 = document.getElementById("securityquestion2");
-    var securityQuestion2Answer = document.getElementById("securityQuestion2Answer");
+// function updateSecurity2View() {
+// 	var securityquestion2 = document.getElementById("securityquestion2");
+//     var securityQuestion2Answer = document.getElementById("securityQuestion2Answer");
 
-	if(securityquestion2.value == "securityquestion2_q1"){
-        securityQuestion2Answer.classList.remove("invisible");
-    }else if (securityquestion2.value == "securityquestion2_q2"){
-        securityQuestion2Answer.classList.remove("invisible");
-    }else if (securityquestion2.value == "securityquestion2_q3"){
-        securityQuestion2Answer.classList.remove("invisible");
-    }else {
-		securityQuestion2Answer.classList.remove("invisible");
-	}
-}
+// 	if(securityquestion2.value == "securityquestion2_q1"){
+//         securityQuestion2Answer.classList.remove("invisible");
+//     }else if (securityquestion2.value == "securityquestion2_q2"){
+//         securityQuestion2Answer.classList.remove("invisible");
+//     }else if (securityquestion2.value == "securityquestion2_q3"){
+//         securityQuestion2Answer.classList.remove("invisible");
+//     }else {
+// 		securityQuestion2Answer.classList.remove("invisible");
+// 	}
+// }
 
-function updateSecurity3View() {
-	var securityquestion3 = document.getElementById("securityquestion3");
-    var securityQuestion3Answer = document.getElementById("securityQuestion3Answer");
+// function updateSecurity3View() {
+// 	var securityquestion3 = document.getElementById("securityquestion3");
+//     var securityQuestion3Answer = document.getElementById("securityQuestion3Answer");
 
-	if(securityquestion3.value == "securityquestion3_q1"){
-        securityQuestion3Answer.classList.remove("invisible");
-    }else if (securityquestion3.value == "securityquestion3_q2"){
-        securityQuestion3Answer.classList.remove("invisible");
-    }else if (securityquestion3.value == "securityquestion3_q3"){
-        securityQuestion3Answer.classList.remove("invisible");
-    }else {
-		securityQuestion3Answer.classList.remove("invisible");
-	}
-}
+// 	if(securityquestion3.value == "securityquestion3_q1"){
+//         securityQuestion3Answer.classList.remove("invisible");
+//     }else if (securityquestion3.value == "securityquestion3_q2"){
+//         securityQuestion3Answer.classList.remove("invisible");
+//     }else if (securityquestion3.value == "securityquestion3_q3"){
+//         securityQuestion3Answer.classList.remove("invisible");
+//     }else {
+// 		securityQuestion3Answer.classList.remove("invisible");
+// 	}
+// }

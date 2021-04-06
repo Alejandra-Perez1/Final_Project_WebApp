@@ -11,7 +11,9 @@
     <% tweets.forEach(tweet => { %>
     <tr>
       <td>
-        <%= tweet.description %>
+        <a href="<%= `/tweets/${tweet._id}` %>">
+          <%= tweet.description %>
+        </a>
       </td>
       <td>
         <a href="<%=`tweets/${tweet._id}/edit`%>">

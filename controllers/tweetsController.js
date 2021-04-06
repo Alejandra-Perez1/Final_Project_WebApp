@@ -3,7 +3,6 @@
 const Tweet = require("../models/tweet"),
   getTweetParams = body => {
     return {
-      title: body.title,
       description: body.description
     };
   };

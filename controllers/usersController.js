@@ -12,9 +12,12 @@ const User = require("../models/user"),
       userName: body.userName,
       password: body.password,
       location: body.location,
-      // securityQuestion1Answer: body.securityQuestion1Answer,
-      // securityQuestion2Answer: body.securityQuestion2Answer,
-      // securityQuestion3Answer: body.securityQuestion3Answer,
+      securityquestion1: body.securityquestion1,
+      securityquestion2: body.securityquestion2,
+      securityquestion2: body.securityquestion2,
+      securityQuestion1Answer: body.securityQuestion1Answer,
+      securityQuestion2Answer: body.securityQuestion2Answer,
+      securityQuestion3Answer: body.securityQuestion3Answer,
       date: body.date,
       biography: body.biography
     };
@@ -134,11 +137,12 @@ module.exports = {
       })
       .trim();
     req.check("email", "Email is invalid").isEmail();
-    req
-      .check("userName", "User Name is invalid")
-      .notEmpty()
-      .equals(req.body.userName);
+    req.check("userName", "User Name is invalid").notEmpty().equals(req.body.userName);
     req.check("password", "Password cannot be empty").notEmpty();
+    req.check("securityQuestion1Answer", "Security Question 1 Answer cannot be empty").notEmpty();
+    req.check("securityQuestion2Answer", "Security Question 2 Answer cannot be empty").notEmpty();
+    req.check("securityQuestion3Answer", "Security Question 3 Answer cannot be empty").notEmpty();
+    req.check("date", "Date of Birth cannot be empty").notEmpty();
     req.getValidationResult().then(error => {
       if (!error.isEmpty()) {
         let messages = error.array().map(e => e.msg);

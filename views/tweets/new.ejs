@@ -1,10 +1,11 @@
-<div class="data-form">
-    <form class="form-signin" action="<%=`/tweet/create`%>" method="POST">
-      <h2 class="form-signin-heading">What's Happening?</h2>
-      <label for="inputTitle">Title</label>
-      <input type="text" name="title" id="inputTitle" class="form-control" placeholder="Title" autofocus>
-      <label for="inputDescription">Post</label>
-      <input type="textarea" rows="5" name="description" id="inputDescription" class="form-control" placeholder="Description">
-      <br /><button class="btn btn-lg btn-primary btn-block" type="submit">Tweet</button>
-    </form>
-  </div>
+<div class="container data-form">
+  <form class="form-signin row mt-8" id="form" action="/tweets/create" method="POST">
+    <div class="col-md-8 m-auto">
+      <div class="card card-body text-center">
+        <h2 class="form-signin-heading">What's Happening?</h2>
+        <textarea rows = "5" name="description" id="inputDescription" class="form-control" autofocus></textarea>
+        <br /><button class="btn btn-lg btn-primary btn-block" type="submit">Tweet</button>
+      </div>
+    </div>
+  </form>
+</div>

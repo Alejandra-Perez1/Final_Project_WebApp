@@ -3,9 +3,7 @@
   <head>
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="/css/signup.css"> -->
     <link rel="stylesheet" href="/css/Chitter_Chatter.css">
-    <!-- <script defer src="signup.js"></script> -->
   </head>
 
   <body>
@@ -58,15 +56,70 @@
                 <small> Error Message </small>
                 <br>
 
-                <label for="location">Location:</label>
-                <input type="text" id="location" placeholder="Denver" />
+                <label for="securityquestion1" class="col-form-label" style="font-size: 18px">
+                  Security Question 1
+                </label>
+                <select id="securityquestion1" name="securityquestion1" onchange="updateSecurity1View()">
+                  <option value="securityquestion1_q0"></option>
+                  <option value="securityquestion1_q1">What is the city you were born in?</option>
+                  <option value="securityquestion1_q2">What is your mother's maiden name?</option>
+                  <option value="securityquestion1_q3"> What is the the color of your first car? </option>
+                </select>
+                <div id="securityQuestion1Answer" class="form-group">
+                    <input type="text" id="securityQuestion1Answer" name="securityQuestion1Answer" class="input-box" placeholder="Your Answer"/>
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small> Error Message </small>
+                </div>
+
+                <label for="securityquestion2" class="col-form-label" style="font-size: 18px">
+                  Security Question 2
+                </label>
+                <select id="securityquestion2" name="securityquestion2" onchange="updateSecurity2View()">
+                  <option value="securityquestion2_q0"></option>
+                  <option value="securityquestion2_q1"> What is the city you were born in?</option>
+                  <option value="securityquestion2_q2">What is your mother's maiden name?</option>
+                  <option value="securityquestion2_q3">What is the the color of your first car?</option>
+                </select>
+                <div id="securityQuestion2Answer" class="form-group">
+                  <input type="text" id="securityQuestion2Answer" name="securityQuestion2Answer" class="input-box" placeholder="Your Answer"/>
+                  <i class="fa fa-check-circle"></i>
+                  <i class="fa fa-exclamation-circle"></i>
+                  <small> Error Message </small>
+                </div>
+
+                <label for="securityquestion3" class="col-form-label" style="font-size: 18px">
+                  Security Question 3
+                </label>
+                <select id="securityquestion3" name="securityquestion3" onchange="updateSecurity3View()">
+                  <option value="securityquestion3_q0"></option>
+                  <option value="securityquestion3_q1"> What is the city you were born in?</option>
+                  <option value="securityquestion3_q2">What is your mother's maiden name?</option>
+                  <option value="securityquestion3_q3"> What is the the color of your first car?</option>
+                </select>
+                <div id="securityQuestion3Answer" class="form-group">
+                  <input type="text" id="securityQuestion3Answer" name="securityQuestion3Answer" class="input-box" placeholder="Your Answer"/>
+                  <i class="fa fa-check-circle"></i>
+                  <i class="fa fa-exclamation-circle"></i>
+                  <small> Error Message </small>
+                </div>
+
+                <label for="date">Date of Birth:</label>
+                <input type="date" id="date" name="date"/>
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
                 <small> Error Message </small>
                 <br>
 
-                <label for="date">Date of Birth:</label>
-                <input type="date" id="date" name="date"/>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Denver" />
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small> Error Message </small>
+                <br>
+
+                <label for="biography" class="col-sm-2 col-form-label">Bio</label>
+                <input type="text" id="biography" name="biography" placeholder="Student"/>
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
                 <small> Error Message </small>
@@ -90,10 +143,10 @@
       </form>
     </div>
 
-    <script src="../public/sign-up/signup.js"></script>
-    <script type="text/javascript" src="../public/sign-up/signup.js"></script>
+    <script src="/public/sign-up/signup.js"></script>
+    <!-- <script type="text/javascript" src="../public/sign-up/signup.js"></script> -->
 
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
@@ -101,7 +154,7 @@
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
-            crossorigin="anonymous"></script> -->
+            crossorigin="anonymous"></script>
     
   </body>
 </html>

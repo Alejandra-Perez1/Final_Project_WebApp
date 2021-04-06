@@ -1,14 +1,7 @@
-<h1 class="center"> Viewing 
-    <%= tweet.title %>
+<h1 class="center"> Tweets
   </h1>
   
   <table class="table">
-    <tr>
-      <th>Title</th>
-      <td>
-        <%= tweet.title %>
-      </td>
-    </tr>
     <tr>
       <th>Tweet</th>
       <td>
@@ -16,7 +9,6 @@
       </td>
     </tr>
   </table>
-  
   
   <div>
     <a class="button" href="<%=`/tweets/${tweet._id}/edit`%>">

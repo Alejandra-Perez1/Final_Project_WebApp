@@ -2,7 +2,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Title</th>
       <th>Description</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -11,11 +10,6 @@
   <tbody>
     <% tweets.forEach(tweet => { %>
     <tr>
-      <td>
-        <a href="<%= `/tweets/${tweet._id}` %>">
-          <%= tweet.title %>
-        </a>
-      </td>
       <td>
         <%= tweet.description %>
       </td>

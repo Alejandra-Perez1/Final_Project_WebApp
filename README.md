@@ -126,3 +126,31 @@ npm install
 3. Start the server:
 node server
 If you get an error, make sure you don't have another server listening on port 3000.
+
+
+### Assignment 4
+#### In this assignment we are finishing all the required functionalities for the chitter-chatter site to work
+
+- [x] We updated the user model to make it more robus adding CRUD actions and restructure the site.
+- [x] We identify fields that are required in the proper schema and added timestamps.
+- [x] We added new templates to restructure the site and edit them to handle CRUD actions in a proper way. 
+- [x] Added sessions and cookies
+- [x] Cookies and user sessions were handle with error messages 
+- [x] Used passport for handling user sign-up and sign-in
+- [x] Passport was used for user authentication and used flash messages to show success or error messages in the views folder.
+- [x] Used express-validator to reimplement the vaildation sessions to promptly display an error message to users
+- [x] Express-validator was used to check proper email addresses, integers, name, last name, and password.
+- [x] Extended views to let the user know, they have logged in and/or logged out.
+- [x] The navigation bar was designed to have link to different parts of the web app such as profile, log in.
+- [x] Added tweets/posts capability for users. They are able to post anything and see other user's posts.
+
+#### Each user's homepage
+- [x] User info is shown: name, last name, username, number of tweets
+- [x] Posts from other users are shown with their name, username and the propert post text. The main user is able to delete its own posts but not other user's posts.
+- [x] Added a text area for the user to post. The limit size is 280 characters. POST ARE TEXTUAL ONLY? CAN WE ADD PICTURES?
+- [x] A section WHO TO FOLLOW with a list of all users in the system
+- [x] A section TRENDING TOPICS which is empty for now
+
+### Instructions: 
+1. 
+ 

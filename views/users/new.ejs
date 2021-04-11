@@ -4,23 +4,24 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/Chitter_Chatter.css">
+    <script src= "/public/sign-up/signup.js"></script>
   </head>
 
   <body>
         <div class="container data-form">
-        <form class="form-signin row mt-8" id="form" action="/users/create" method="POST">
+        <form class="form-signin row mt-8" id="form" action="/users/create" method="POST" onsubmit="return checkInputs()">
           <div class="col-md-8 m-auto">
             <div class="card card-body text-center">
               <img src="../images/logo.jpg" alt="logo" />
               <h2 class="form-signin-heading">Sign Up </h2>
 
-                <label for="inputFirstName">First Name:</label>
+                <label for="inputFirstName" >First Name:</label>
                 <input type="text" id="inputFirstName" name="first" placeholder="John" autofocus/>
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
                 <small> Error Message </small>
                 <br>
-
+              
                 <label for="inputLastName">Last Name:</label>
                 <input type="text" id="inputLastName" name="last" placeholder="Doe"/>
                 <i class="fa fa-check-circle"></i>
@@ -112,14 +113,14 @@
                 <br>
 
                 <label for="location">Location:</label>
-                <input type="text" id="location" name="location" placeholder="Denver" />
+                <input type="text" id="location" class="input-box" name="location" placeholder="Denver" />
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
                 <small> Error Message </small>
                 <br>
 
-                <label for="biography" class="col-sm-2 col-form-label">Bio</label>
-                <input type="text" id="biography" name="biography" placeholder="Student"/>
+                <label for="biography">Bio:</label>
+                <input type="text" id="biography" class="input-box" name="biography" placeholder="Student"/>
                 <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
                 <small> Error Message </small>
@@ -143,7 +144,7 @@
       </form>
     </div>
 
-    <script src="/public/sign-up/signup.js"></script>
+    <!-- <script src="/public/sign-up/signup.js"></script> -->
     <!-- <script type="text/javascript" src="../public/sign-up/signup.js"></script> -->
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 

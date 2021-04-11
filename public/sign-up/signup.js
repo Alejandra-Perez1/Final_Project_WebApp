@@ -1,10 +1,10 @@
 //Get all of the necessary element
 const form = document.getElementById('form');
-const firstName = document.getElementById('firstName');
-const lastName = document.getElementById('lastName');
+const firstName = document.getElementById('inputFirstName');
+const lastName = document.getElementById('inputLastName');
 const username = document.getElementById('userName');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
+const email = document.getElementById('inputEmail');
+const password = document.getElementById('inputPassword');
 const password2 = document.getElementById('password2');
 const userLocation = document.getElementById('location');
 const date = document.getElementById('date');

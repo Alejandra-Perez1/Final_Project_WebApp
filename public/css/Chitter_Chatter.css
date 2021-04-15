@@ -7,9 +7,10 @@
 
 body {
   margin: 0;
-  padding-top: 130px;
+  padding-top: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #625a56;
+  
 }
 
 #nav {
@@ -19,7 +20,8 @@ body {
   border-bottom: solid 8px #fd4e33d5;
   box-shadow: 10px 10px 10px #ccc;
   position: absolute;
-  top: 0;
+  top: 300;
+  
 }
 
 #title {
@@ -29,10 +31,15 @@ body {
   text-transform: uppercase;
 }
 
-img {
+/*img {
   width: 100%;
   border-radius: 50%;
   align-items: center;
+}*/
+
+img {
+  width: 70px;
+  border-radius: 10%;
 }
 
 a {
@@ -169,10 +176,10 @@ button[type=submit] {
   position: absolute;
   right: 10px;
   top: 5px;
-  padding: 10px;
+  padding:10px;
   background: #fd4e33d5;
   color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .login p {

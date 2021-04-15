@@ -1,0 +1,22 @@
+<h1 class="center"> Tweets</h1>
+  
+  <table class="table">
+    <tr>
+      <th>Tweet</th>
+      <td>
+        <%= tweet.description%>
+      </td>
+    </tr>
+  </table>
+  
+  <div>
+    <a class="button" href="<%=`/tweets/${tweet._id}/edit`%>">
+      Edit Tweet
+    </a>
+  </div>
+  <div>
+    <a class="button" href="<%= `/tweets/${tweet._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete the tweet?')" a>Delete</a>
+  </div>
+  <div>
+    <a class="button" href="/tweets">View all Tweets</a>
+  </div>

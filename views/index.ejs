@@ -4,9 +4,18 @@
       <img src="images/logo.jpg" alt="">
       <h1><i class="fab fa-node-js fa-3x"></i></h1>
       <h1>Welcome!</h1>
-      <p> Create a Account or Log In</p>
-      <a href="/users/new" class="btn btn-primary btn-block mb-2">Sign Up</a>
-      <a href="/users/login" class="btn btn-secondary btn-block">Login</a>
+      <div class="col-sm nav-align">
+        <% if (loggedIn) { %>
+          <a href="/users">
+            <!-- Add profile.ejs code here -->
+          </a>
+        <%} else {%>
+          <p> Create a Account or Log In</p>
+          <a href="/users/new" class="btn btn-primary btn-block mb-2">Sign Up</a>
+          <a href="/users/login" class="btn btn-secondary btn-block">Login</a>
+        <% } %>
+       
+      </div>
     </div>
   </div>
 </div>

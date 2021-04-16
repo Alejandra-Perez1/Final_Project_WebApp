@@ -158,43 +158,4 @@ If you get an error, make sure you don't have another server listening on port 3
 3. From the repo folder, do npm install to install all required packages to run the website, then npm start to begin testing
 4. Go to localhost:3000 in your web browser to access the webpage.
 
-### File Structure 
-+-- controllers/
-|    +-- errorController.js
-|    +-- homeController.js
-|    +-- tweetsController.js
-|    +-- usersController.js
-+-- models/
-|    +-- tweet.js
-|    +-- user.js
-+-- public/
-    +-- css/
-     |    +-- Chitter_Chatter.css
-     |    +-- signin.css
-     |    +-- signup.css
-    +-- images/
-    +-- sign-in/
-    |    +-- sign-in.js
-    +-- sign-up/
-    |    +-- sign-up.js
-    +-- 404.html
-+-- views
-|    +-- tweets/
-     |    +-- edit.ejs
-     |    +-- index.ejs
-     |    +-- new.ejs
-     |    +-- show.ejs
-|    +-- users/
-     |    +-- edit.ejs
-     |    +-- index.ejs
-     |    +-- login.ejs
-     |    +-- new.ejs
-     |    +-- show.ejs
-|    +-- error.ejs
-|    +-- index.ejs
-|    +-- layout.ejs
-+-- main.js
-+-- package-lock.json
-+-- package.json
-+-- README.md
-+-- seed.js
+

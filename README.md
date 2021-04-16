@@ -129,7 +129,7 @@ If you get an error, make sure you don't have another server listening on port 3
 
 
 ### Assignment 4
-#### In this assignment we worked on imporving Chitter-Chatter by adding new functionalities to it, implementing CRUD actions and building necessary views, models and controllers, and handle user authentication securely. We also worked on adding tweet functionatities. 
+##### In this assignment we worked on imporving Chitter-Chatter by adding new functionalities to it, implementing CRUD actions and building necessary views, models and controllers, and handle user authentication securely. We also worked on adding tweet functionatities. 
 
 - [x] We updated the user model to make it more robust by adding CRUD actions and restructured the web-app.
 - [x] We identify fields that are required and unique in the proper schema and added timestamps.
@@ -151,8 +151,8 @@ If you get an error, make sure you don't have another server listening on port 3
 - [x] A section for WHO TO FOLLOW has been added to the side menu with placeholders for now. 
 - [x] A section TRENDING TOPICS has been added to the side menu with placeholders for now. 
 
-### Instructions to run: 
-#### **** Make sure you have npm and mongoDB installed before running this repository ****
+#### Instructions to run: 
+###### **** Make sure you have npm and mongoDB installed before running this repository ****
 1. Download repository to your computer 
 2. Once the repository is in your computer, open the command line or terminal and cd until you are in the repo
 3. From the repo folder, do npm install to install all required packages to run the website, then npm start to begin testing

@@ -25,16 +25,10 @@
         <li class="nav-item">
           <h1 id="title">Chitter~Chatter</h1>
         </li>
-        <!--<li class="nav-item">
-          <a class="navbar-brand" href="#">
-            <img src="https://cdn.glitch.com/eedd7988-6291-440f-9057-f1ade3a9d518%2Flogo.jpg?v=1614207428544"
-              alt="logo" />
-              
-        </li>
-        </a>-->
-
-        <!--<div class="nav-item"> -->
+        
           <% if (loggedIn) { %>
+            <br>
+            <br>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">
                 <span class="button">Home</span>
@@ -60,8 +54,6 @@
     </div>
   </nav>
 
-
-
   <section>
     <div class="login ">
       <% if (loggedIn) { %>
@@ -74,8 +66,6 @@
             <a href="/users/logout">Log out</a>
           </span>
         </p>
-
-
         <%} else {%>
           <a href="/users/login">Log In</a>
           <% } %>

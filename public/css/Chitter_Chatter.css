@@ -136,6 +136,28 @@ a {
   visibility: visible;
 }
 
+.sidenav {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  background-color:#86e5ee; 
+}
+
+/* The navigation menu links */
+.sidenav a {
+  font-size: 20px;
+  color: black;
+  
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
 .hidden-text {
   -webkit-text-security: disc;
 }

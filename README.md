@@ -129,27 +129,27 @@ If you get an error, make sure you don't have another server listening on port 3
 
 
 ### Assignment 4
-#### In this assignment we are finishing all the required functionalities for the chitter-chatter site to work
+#### In this assignment we worked on imporving Chitter-Chatter by adding new functionalities to it, implementing CRUD actions and building necessary views, models and controllers, and handle user authentication securely. We also worked on adding tweet functionatities. 
 
-- [x] We updated the user model to make it more robus adding CRUD actions and restructure the site.
-- [x] We identify fields that are required in the proper schema and added timestamps.
-- [x] We added new templates to restructure the site and edit them to handle CRUD actions in a proper way. 
-- [x] Added sessions and cookies
-- [x] Cookies and user sessions were handle with error messages 
-- [x] Used passport for handling user sign-up and sign-in
-- [x] Passport was used for user authentication and used flash messages to show success or error messages in the views folder.
-- [x] Used express-validator to reimplement the vaildation sessions to promptly display an error message to users
+- [x] We updated the user model to make it more robust by adding CRUD actions and restructured the web-app.
+- [x] We identify fields that are required and unique in the proper schema and added timestamps.
+- [x] We Added sessions and cookies
+- [x] Cookies and user sessions were handled with error messages 
+- [x] We used passport Pafor user authentication and used flash messages to show success or error messages in the views folder.
+- [x] We used express-validator to reimplement the vaildation sessions to promptly display an error message to users
 - [x] Express-validator was used to check proper email addresses, integers, name, last name, and password.
-- [x] Extended views to let the user know, they have logged in and/or logged out.
+- [x] We extended views to let the user know, they have logged in and/or logged out.
 - [x] The navigation bar was designed to have link to different parts of the web app such as profile, log in.
 - [x] Added tweets/posts capability for users. They are able to post anything and see other user's posts.
 
 #### Each user's homepage
-- [x] User info is shown: name, last name, username, number of tweets
-- [x] Posts from other users are shown with their name, username and the propert post text. The main user is able to delete its own posts but not other user's posts.
-- [x] Added a text area for the user to post. The limit size is 280 characters. POST ARE TEXTUAL ONLY? CAN WE ADD PICTURES?
-- [x] A section WHO TO FOLLOW with a list of all users in the system
-- [x] A section TRENDING TOPICS which is empty for now
+- [x] A user is only able to tweet if they are logged in.
+- [x] A user is only shown the menu option if they are logged in. 
+- [x] User info is shown by clicking on the profile: first name, last name, username, email, and password. 
+- [x] Added a text area for the user to post. The limit size is 250 characters.
+- [x] A user is able to post a tweet and see all tweets currently in the database. 
+- [x] A section for WHO TO FOLLOW has been added to the side menu with placeholders for now. 
+- [x] A section TRENDING TOPICS has been added to the side menu with placeholders for now. 
 
 ### Instructions to run: 
 #### **** Make sure you have npm and mongoDB installed before running this repository ****
@@ -157,5 +157,12 @@ If you get an error, make sure you don't have another server listening on port 3
 2. Once the repository is in your computer, open the command line or terminal and cd until you are in the repo
 3. From the repo folder, do npm install to install all required packages to run the website, then npm start to begin testing
 4. Go to localhost:3000 in your web browser to access the webpage.
+
+### Issues we ran into
+We unfortunately ran out of time to complete all of the requirments of assignment 4 so we ended up submitting what we had so far. We have all of the components there like thea ability for the users to post tweets and see all tweets, it's just missing a few things so we will continue to work on it in the next few days. We gave it our best shot but just ran out of time. 
+[] We still need to add user name and the user's first and last name to each tweet. We are working on using references from user schema to tweet schema. We had issues with it becuase it kept causing the app to crash so we decided to no include it in our submission for now. We are working on debugging it. 
+[] We need to make sure that a user can't edit other user's profile information/tweets. Right now, any user can edit any other user's profile details and tweets and even delete them which is not ideal so we will work on ficing that. 
+[] We need to display all of our user in "Who to follow" tab 
+[] Generally, we need to clean up the look and feel of the whole app and how it flows which will be our goal of the final submission. 
 
 

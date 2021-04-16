@@ -1,11 +1,6 @@
 "use strict";
 
-const Tweet = require("../models/tweet"),
-  getTweetParams = body => {
-    return {
-      description: body.description
-    };
-  };
+const Tweet = require("../models/tweet");
 
 module.exports = {
   index: (req, res, next) => {
@@ -28,8 +23,11 @@ module.exports = {
   },
 
   create: (req, res, next) => {
-    let tweetParams = getTweetParams(req.body);
-    Tweet.create(tweetParams)
+    let newTweet = new Tweet({
+      userId: req.body.userId,
+      description: req.body.description
+    });
+    Tweet.create(newTweet)
       .then(tweet => {
         res.locals.redirect = "/tweets";
         res.locals.tweet = tweet;
@@ -79,12 +77,12 @@ module.exports = {
   },
 
   update: (req, res, next) => {
-    let tweetId = req.params.id,
-      tweetParams = getTweetParams(req.body);
+    let tweetId = req.params.id;
+    let updatedtweet = new Tweet ({
 
-    Tweet.findByIdAndUpdate(tweetId, {
-      $set: tweetParams
-    })
+    });
+
+    Tweet.findByIdAndUpdate(tweetId, updatedtweet) 
       .then(tweet => {
         res.locals.redirect = `/tweets/${tweetId}`;
         res.locals.tweet = tweet;

@@ -19,7 +19,8 @@ const User = require("../models/user"),
       securityQuestion2Answer: body.securityQuestion2Answer,
       securityQuestion3Answer: body.securityQuestion3Answer,
       date: body.date,
-      biography: body.biography
+      biography: body.biography,
+      tweets: body.tweets
     };
   };
 
@@ -49,7 +50,7 @@ module.exports = {
     User.register(newUser, req.body.password, (e, user) => {
       if (user) {
         req.flash("success", `${user.fullName}'s account created successfully!`);
-        res.locals.redirect = "/users";
+        res.locals.redirect = "/login";
         next();
       } else {
         req.flash("error", `Failed to create user account because: ${e.message}.`);
@@ -97,11 +98,49 @@ module.exports = {
   },
 
   update: (req, res, next) => {
-    let userId = req.params.id,
-      userParams = getUserParams(req.body);
+    if(re.skip){
+      return next();
+    }
+    let userId = req.params.id;
+    let updatedUser = new User({
+      name: {
+        first: req.body.first,
+        last: req.body.last
+      },
+      email: req.body.email,
+      userName: req.body.userName,
+      password: req.body.password,
+      location: req.body.location,
+      securityquestion1: req.body.securityquestion1,
+      securityquestion2: req.body.securityquestion2,
+      securityquestion2: req.body.securityquestion2,
+      securityQuestion1Answer: req.body.securityQuestion1Answer,
+      securityQuestion2Answer: req.body.securityQuestion2Answer,
+      securityQuestion3Answer: req.body.securityQuestion3Answer,
+      date: req.body.date,
+      biography: req.body.biography,
+      tweets: req.body.tweets
+    });
 
     User.findByIdAndUpdate(userId, {
-      $set: userParams
+      $set: 
+      {
+        'name.first': req.body.first,
+        'name.last': req.body.last,
+        email: req.body.email,
+        userName: req.body.userName,
+        password: req.body.password,
+        location: req.body.location,
+        securityquestion1: req.body.securityquestion1,
+        securityquestion2: req.body.securityquestion2,
+        securityquestion2: req.body.securityquestion2,
+        securityQuestion1Answer: req.body.securityQuestion1Answer,
+        securityQuestion2Answer: req.body.securityQuestion2Answer,
+        securityQuestion3Answer: req.body.securityQuestion3Answer,
+        date: req.body.date,
+        biography: req.body.biography,
+        tweets: req.body.tweets
+      }
     })
       .then(user => {
         res.locals.redirect = `/users/${userId}`;
@@ -113,6 +152,33 @@ module.exports = {
         next(error);
       });
   },
+  updateTweet: (req, res, next) => {
+    if(req.skip)
+    { 
+        return next();
+    }
+    let userId = req.params.id;
+    let updatedUser = new User({
+        tweets: req.body.tweets
+    });
+    User.findByIdAndUpdate(userId,
+        {
+            $set:
+            {
+                tweets: req.body.tweets
+            }
+        }
+    )
+    .then(user => {
+      res.locals.redirect = `/users/${userId}`;
+      res.locals.user = user;
+      next();
+    })
+    .catch(error => {
+      console.log(`Error updating user by ID: ${error.message}`);
+      next(error);
+    });
+},
 
   delete: (req, res, next) => {
     let userId = req.params.id;
@@ -126,6 +192,7 @@ module.exports = {
         next();
       });
   },
+
   login: (req, res) => {
     res.render("users/login");
   },
@@ -136,6 +203,8 @@ module.exports = {
         all_lowercase: true
       })
       .trim();
+    req.check("first", "First name can't be empty").notEmpty();
+    req.check("last", "Last name can't be empty").notEmpty();
     req.check("email", "Email is invalid").isEmail();
     req.check("userName", "User Name is invalid").notEmpty().equals(req.body.userName);
     req.check("password", "Password cannot be empty").notEmpty();
@@ -168,3 +237,21 @@ module.exports = {
     next();
   }
 };
+
+// exports.getAllUsers = (req, res) => {
+//   user.find({})
+//       .exec()
+//       .then(users => {
+//           res.render("users", {
+//               users: users
+//           })
+//       })
+//       .catch(error => {
+//           console.log(error.message);
+//           return [];
+//       })
+//       .then(() => {
+//           console.log("promise complete");
+//       });
+// };
+

@@ -59,19 +59,31 @@ var userSchema = new Schema(
       type: String,
       trim: true
     },
-    tweets: [{ type: Schema.Types.ObjectId, ref: "Tweet" }]
+    tweets: [{type: mongoose.Schema.Types.ObjectId, ref: "Tweet"}]
   },
   {
     timestamps: true
   }
 );
 
-userSchema.virtual("fullName").get(function () {
-  return `${this.name.first} ${this.name.last}`;
-});
+userSchema.methods.getInfo = function () {
+  return `name ${this.name} userName ${this.userName} email ${this.email} date ${this.date} biography ${this.biography}`;
+};
 
 userSchema.plugin(passportLocalMongoose, {
   usernameField: "email"
 });
+
+userSchema.virtual("fullName").get(function () {
+  return `${this.name.first} ${this.name.last}`;
+});
+
+userSchema.methods.findLocalUser = function () {
+  return this.model("User")
+      .find({
+        userName: this.userName
+      })
+      .exec();
+}
 
 module.exports = mongoose.model("User", userSchema);

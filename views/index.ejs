@@ -7,8 +7,8 @@
     <!-- This line will help the website look great in any screen size -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- import stylesheet -->
-    <link rel="stylesheet" href="home-page.css" />
-    <!-- <link rel="stylesheet" href="../GlobalCSS/style.css" /> -->
+    <link rel="stylesheet" href="/css/Chitter_Chatter.css">
+    
 
     <!-- import bootstrap-->
     <link
@@ -32,6 +32,10 @@
       <section>
         <div class="row d-flex flex-row justify-content-center bd-highlight">
           <div class="col  border border-1 rounded ">
+            <span>
+              <img src="images/blankprofile.png" alt="">
+              <b><%= currentUser.fullName %></b>
+            </span>
             <ul class="nav">
               <li class="nav-item">
                 <!--  <a class="nav-link active" aria-current="page" href="#"> </a>-->
@@ -60,35 +64,30 @@
             <a class="btn btn-primary btn-sm " href="#" role="button">Post</a>
           </div>
           <div class="col-6 border border-1 rounded">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="What's happening?"
-                aria-label="What's happening?"
-                
-              />
-              <button class="btn btn-primary" type="button" id="post">
-                Post
-              </button>
-            </div>
-  
+            <form class=" row mt-8" id="form" action="/tweets/create" method="POST">
+              <div class="col-md-8 m-auto">
+                <div class="card card-body text-center" style="top: 10px !important;">
+                  <span>
+                    <img src="images/blankprofile.png" alt="">
+                    <b><%= currentUser.fullName %></b>
+                      @<%= currentUser.userName %>
+                  </span>
+                  <textarea rows = "5" name="description" id="inputDescription" class="form-control" autofocus></textarea>
+                  <br>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Tweet</button>
+                </div>
+              </div>
+            </form>
+          
             <!-- User 1 -->
             <div>
-              <!-- GitHub link -->
-              <!-- <img
-                src="../images/male_profile_green.svg"
-                class="float-start"
-                alt="male profile"
-              /> -->
-  
               <img
                 src="https://cdn.glitch.com/eedd7988-6291-440f-9057-f1ade3a9d518%2Fundraw_profile_pic_ic5t.svg?v=1614302991093"
                 class="float-start"
                 alt="male profile"
               />
               <div>
-                <b> User Name </b><span class="ref_username">@Jay </span
+                <b> Jay Sen </b><span class="ref_username">@Jay </span
                 ><span class="time">3:50 PM </span
                 ><span>
                   <a href="#"><i class="fa fa-fw fa-ellipsis-h"></i></a
@@ -101,19 +100,13 @@
             <br />
             <!-- User 2 -->
             <div>
-              <!-- GitHub link -->
-              <!-- <img
-                src="../images/male_profile_yellow.svg"
-                class="float-start"
-                alt="male profile"
-              /> -->
               <img
                 src="https://cdn.glitch.com/eedd7988-6291-440f-9057-f1ade3a9d518%2Fundraw_profile_pic_ic5t-2.svg?v=1614308023352"
                 alt="male2 profile"
                 class="float-start"
               />
               <div>
-                <b> User Name </b><span class="ref_username">@Craig </span
+                <b> Craig H </b><span class="ref_username">@Craig </span
                 ><span class="time">10:30 PM </span
                 ><span>
                   <a href="#"><i class="fa fa-fw fa-ellipsis-h"></i></a
@@ -126,20 +119,13 @@
             <br />
             <!-- User 3 -->
             <div>
-              <!-- GitHub link -->
-              <!-- <img
-                src="../images/male_profile_pink.svg"
-                class="float-start"
-                alt="male profile"
-              /> -->
-  
               <img
                 src="https://cdn.glitch.com/eedd7988-6291-440f-9057-f1ade3a9d518%2Fundraw_profile_pic_ic5t-3.svg?v=1614308213205"
                 class="float-start"
-                alt="male profile"
+                alt="female profile"
               />
               <div>
-                <b> User Name </b><span class="ref_username">@Tam </span
+                <b> Tammy </b><span class="ref_username">@Tam </span
                 ><span class="time">8:30 AM </span
                 ><span>
                   <a href="#"><i class="fa fa-fw fa-ellipsis-h"></i></a

@@ -151,6 +151,50 @@ If you get an error, make sure you don't have another server listening on port 3
 - [x] A section WHO TO FOLLOW with a list of all users in the system
 - [x] A section TRENDING TOPICS which is empty for now
 
-### Instructions: 
-1. 
- 
+### Instructions to run: 
+#### **** Make sure you have npm and mongoDB installed before running this repository ****
+1. Download repository to your computer 
+2. Once the repository is in your computer, open the command line or terminal and cd until you are in the repo
+3. From the repo folder, do npm install to install all required packages to run the website, then npm start to begin testing
+4. Go to localhost:3000 in your web browser to access the webpage.
+
+### File Structure 
++-- controllers/
+|    +-- errorController.js
+|    +-- homeController.js
+|    +-- tweetsController.js
+|    +-- usersController.js
++-- models/
+|    +-- tweet.js
+|    +-- user.js
++-- public/
+    +-- css/
+     |    +-- Chitter_Chatter.css
+     |    +-- signin.css
+     |    +-- signup.css
+    +-- images/
+    +-- sign-in/
+    |    +-- sign-in.js
+    +-- sign-up/
+    |    +-- sign-up.js
+    +-- 404.html
++-- views
+|    +-- tweets/
+     |    +-- edit.ejs
+     |    +-- index.ejs
+     |    +-- new.ejs
+     |    +-- show.ejs
+|    +-- users/
+     |    +-- edit.ejs
+     |    +-- index.ejs
+     |    +-- login.ejs
+     |    +-- new.ejs
+     |    +-- show.ejs
+|    +-- error.ejs
+|    +-- index.ejs
+|    +-- layout.ejs
++-- main.js
++-- package-lock.json
++-- package.json
++-- README.md
++-- seed.js

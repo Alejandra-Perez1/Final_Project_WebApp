@@ -159,7 +159,7 @@ If you get an error, make sure you don't have another server listening on port 3
 
 #### Issues we Ran into while doing Assignment 4 and what we are doing to fix it as soon as possible: 
 We unfortunately ran out of time to complete all of the requirments of assignment 4 so we ended up submitting what we had so far. We have all of the components there like thea ability for the users to post tweets and see all tweets, it's just missing a few things so we will continue to work on it in the next few days. We gave it our best shot but just ran out of time. 
-[] We still need to add user name and the user's first and last name to each tweet. We are working on using references from user schema to tweet schema. We had issues with it becuase it kept causing the app to crash so we decided to no include it in our submission for now. We are working on debugging it. 
-[] We need to make sure that a user can't edit other user's profile information/tweets. Right now, any user can edit any other user's profile details and tweets and even delete them which is not ideal so we will work on ficing that. 
-[] We need to display all of our user in "Who to follow" tab 
-[] Generally, we need to clean up the look and feel of the whole app and how it flows which will be our goal of the final submission. 
+[ ] We still need to add user name and the user's first and last name to each tweet. We are working on using references from user schema to tweet schema. We had issues with it becuase it kept causing the app to crash so we decided to no include it in our submission for now. We are working on debugging it. 
+[ ] We need to make sure that a user can't edit other user's profile information/tweets. Right now, any user can edit any other user's profile details and tweets and even delete them which is not ideal so we will work on ficing that. 
+[ ] We need to display all of our user in "Who to follow" tab 
+[ ] Generally, we need to clean up the look and feel of the whole app and how it flows which will be our goal of the final submission. 

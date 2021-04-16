@@ -127,7 +127,6 @@ npm install
 node server
 If you get an error, make sure you don't have another server listening on port 3000.
 
-
 ### Assignment 4
 ##### In this assignment we worked on imporving Chitter-Chatter by adding new functionalities to it, implementing CRUD actions and building necessary views, models and controllers, and handle user authentication securely. We also worked on adding tweet functionatities. 
 

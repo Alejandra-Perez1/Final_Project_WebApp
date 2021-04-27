@@ -3,6 +3,9 @@
   <thead>
     <tr>
       <th>Description</th>
+      <th>Full Name</th>
+      <th>User Name</th>
+      <th>Tweet Date</th>
       <th>Edit</th>
       <th>Delete</th>
     </tr>
@@ -14,6 +17,15 @@
         <a href="<%= `/tweets/${tweet._id}` %>">
           <%= tweet.description %>
         </a>
+      </td>
+      <td>
+        <b><%= currentUser.fullName %></b>
+      </td>
+      <td>
+        @<%= currentUser.userName %>
+      </td>
+      <td>
+        <%= tweet.date %>
       </td>
       <td>
         <a href="<%=`tweets/${tweet._id}/edit`%>">

@@ -17,7 +17,8 @@ var tweetSchema = new Schema(
     },
     date: { type: Date, default: Date.now },
     likes: {
-      type: int
+      type: Number, 
+      default: 0
     }
   },
   {

@@ -25,6 +25,7 @@ module.exports = {
   create: (req, res, next) => {
     let newTweet = new Tweet({
       userId: req.body.userId,
+      hashtag: req.body.hashtag,
       description: req.body.description
     });
     Tweet.create(newTweet)

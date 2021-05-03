@@ -15,6 +15,9 @@ var tweetSchema = new Schema(
       min: [1, "Tweet can't be empty"],
       max: 280
     },
+    hashtag: {
+      type: String
+    },
     date: { type: Date, default: Date.now },
     likes: {
       type: Number, 

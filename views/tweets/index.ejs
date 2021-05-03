@@ -2,7 +2,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Description</th>
+      <th>Tweet</th>
+      <th>#</th>
       <th>Full Name</th>
       <th>User Name</th>
       <th>Tweet Date</th>
@@ -17,6 +18,9 @@
         <a href="<%= `/tweets/${tweet._id}` %>">
           <%= tweet.description %>
         </a>
+      </td>
+      <td>
+          <%= tweet.hashtag %>
       </td>
       <td>
         <b><%= currentUser.fullName %></b>

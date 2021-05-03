@@ -29,7 +29,7 @@
         @<%= currentUser.userName %>
       </td>
       <td>
-        <%= tweet.date %>
+        <%= tweet.date.toLocaleDateString() %>
       </td>
       <td>
         <a href="<%=`tweets/${tweet._id}/edit`%>">

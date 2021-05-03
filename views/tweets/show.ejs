@@ -70,10 +70,10 @@
                   <img src="images/blankprofile.png" alt="">
                   <b><%= currentUser.fullName %></b>
                     @<%= currentUser.userName %>
-                    <%= tweet.date %>
+                    <%= tweet.date.toLocaleDateString() %>
                 </span>
                 <input type="text" id="hashtag" name="hashtag" value="<%= tweet.hashtag %>"/>
-                <textarea rows = "5" name="description" id="inputDescription" class="form-control" value="<%= tweet.description %>"autofocus></textarea>
+                <textarea rows = "5" name="description" id="inputDescription" class="form-control"autofocus><%= tweet.description %></textarea>
                 <!-- Put like Button here -->
                 <a class="btn btn-primary btn-sm" role="button" name="likes" id="likes">Like</a>
                 <br>

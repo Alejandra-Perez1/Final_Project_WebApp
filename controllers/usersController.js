@@ -4,10 +4,9 @@ const User = require("../models/user"),
   passport = require("passport"),
   getUserParams = body => {
     return {
-      name: {
+      
         first: body.first,
-        last: body.last
-      },
+        last: body.last,
       email: body.email,
       userName: body.userName,
       password: body.password,

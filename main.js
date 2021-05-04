@@ -1,5 +1,7 @@
 "use strict";
 
+const followController = require("./controllers/followController");
+
 const express = require("express"),
   layouts = require("express-ejs-layouts"),
   app = express(),
@@ -20,7 +22,7 @@ const express = require("express"),
 //Database
 mongoose.connect(
   "mongodb://localhost:27017/chitter_chatter",
-  { useNewUrlParser: true }
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
 mongoose.set("useCreateIndex", true);
 
@@ -102,6 +104,8 @@ router.put("/tweets/:id/update", tweetsController.update, tweetsController.redir
 router.get("/tweets/:id", tweetsController.show, tweetsController.showView);
 router.delete("/tweets/:id/delete", tweetsController.delete, tweetsController.redirectView);
 
+
+router.get("/follow", followController.index, followController.indexView);
 router.use(errorController.pageNotFoundError);
 router.use(errorController.internalServerError);
 

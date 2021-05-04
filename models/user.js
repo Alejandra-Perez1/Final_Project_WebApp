@@ -1,20 +1,19 @@
-"use strict";
+
 
 const mongoose = require("mongoose"),
   { Schema } = require("mongoose"),
+  passport = require("passport"),
   passportLocalMongoose = require("passport-local-mongoose");
 
-var userSchema = new Schema(
+ userSchema = new Schema(
   {
-    name: {
-      first: {
-        type: String,
-        trim: true
-      },
-      last: {
-        type: String,
-        trim: true
-      }
+    first: {
+      type: String,
+      trim: true
+    },
+    last: {
+      type: String,
+      trim: true
     },
     email: {
       type: String,
@@ -24,7 +23,7 @@ var userSchema = new Schema(
     },
     userName: {
       type: String,
-      required: true,
+      //required: true,
       lowercase: true,
       unique: true
     },
@@ -39,17 +38,17 @@ var userSchema = new Schema(
     securityQuestion1Answer: {
       type: String,
       trim: true,
-      required: true
+      //required: true
     },
     securityQuestion2Answer: {
       type: String,
       trim: true,
-      required: true
+      //required: true
     },
     securityQuestion3Answer: {
       type: String,
       trim: true,
-      required: true
+     // required: true
     },
     date: {
       type: Date,
@@ -59,7 +58,9 @@ var userSchema = new Schema(
       type: String,
       trim: true
     },
-    tweets: [{type: mongoose.Schema.Types.ObjectId, ref: "Tweet"}]
+    tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tweet" }],
+    follower: [{ type: mongoose.Schema.Types.ObjectId, ref: "Follow" }],
+    unfollow: [{ type: mongoose.Schema.Types.ObjectId, ref: "unfollow" }]
   },
   {
     timestamps: true
@@ -67,7 +68,7 @@ var userSchema = new Schema(
 );
 
 userSchema.methods.getInfo = function () {
-  return `name ${this.name} userName ${this.userName} email ${this.email} date ${this.date} biography ${this.biography}`;
+  return `name ${this.first} last ${this.last} userName ${this.userName} email ${this.email} date ${this.date} biography ${this.biography}`;
 };
 
 userSchema.plugin(passportLocalMongoose, {
@@ -75,15 +76,15 @@ userSchema.plugin(passportLocalMongoose, {
 });
 
 userSchema.virtual("fullName").get(function () {
-  return `${this.name.first} ${this.name.last}`;
+  return `${this.first} ${this.last}`;
 });
 
 userSchema.methods.findLocalUser = function () {
   return this.model("User")
-      .find({
-        userName: this.userName
-      })
-      .exec();
+    .find({
+      userName: this.userName
+    })
+    .exec();
 }
 
 module.exports = mongoose.model("User", userSchema);

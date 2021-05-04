@@ -5,57 +5,63 @@ const mongoose = require("mongoose"),
 
 mongoose.connect(
   "mongodb://localhost:27017/chitter_chatter",
-  { useNewUrlParser: true }
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
 mongoose.connection;
 
 var contacts = [
-    { name: {
-        first: "Jason",
-        last: "White"
-        },
-        email: "jasonwhite@gmail.com",
-        password: "jasonPass",
-        location: "Denver",
-        date: 3/15/1995, 
-        biography: "I am a teacher"
-    },
-    { name: {
-        first: "Jen",
-        last: "Sterling"
-        },
-        email: "jensterling@gmail.com",
-        password: "password123",
-        location: "Texas",
-        date: 1/1/1975,
-        biography: "I am a art student"
-    },
-    { name: {
-        first: "priya",
-        last: "Madhok"
-        },
-        email: "priyamadhok@gmail.com",
-        password: "password@12345",
-        location: "India",
-        date: 12/9/1980,
-        biography: "I am a engineer"
-    },
+  {
+
+    first: "Jason",
+    last: "White",
+    email: "jasonwhite@gmail.com",
+    username: "jwhite",
+    password: "jasonPass",
+    location: "Denver",
+    date: 3 / 15 / 1995,
+    biography: "I am a teacher"
+  },
+  {
+
+    first: "Jen",
+    last: "Sterling",
+    email: "jensterling@gmail.com",
+    username: "jsterling",
+    password: "password123",
+    location: "Texas",
+    date: 1 / 1 / 1975,
+    biography: "I am a art student"
+  },
+  {
+    first: "priya",
+    last: "Madhok",
+    email: "priyamadhok@gmail.com",
+    username: "pmadhok",
+    password: "password@12345",
+    location: "India",
+    date: 12 / 9 / 1980,
+    biography: "I am a engineer"
+  }
 ];
+
+User.deleteMany()
+  .exec()
+  .then(() => {
+    console.log("User data is empty!");
+  });
 
 var commands = [];
 
 contacts.forEach(c => {
   commands.push(
     User.create({
-        name: {
-            first: c.first,
-            last: c.last
-          },
-          email: c.email,
-          password: c.password,
-          location: c.location,
-          date: c.date,
-          biography: c.biography
+      first: c.first,
+      last: c.last,
+      email: c.email,
+      password: c.password,
+      location: c.location,
+      date: c.date,
+      biography: c.biography
     })
   );
 });

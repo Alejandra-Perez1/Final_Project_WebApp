@@ -38,30 +38,20 @@
             </span>
             <ul class="nav">
               <li class="nav-item">
+                <a href="/users"><i class="fa fa-fw fa-user"></i>Profile</a>
+              </li>
+            </ul>
+            <ul class="nav">
+              <li class="nav-item">
                 <!--  <a class="nav-link active" aria-current="page" href="#"> </a>-->
-                <a href="#explore"><i class="fa fa-fw fa-hashtag"></i> Explore</a>
+                <a href="#explore"><i class="fa fa-fw fa-hashtag"></i>Explore</a>
               </li>
             </ul>
             <ul class="nav">
               <li class="nav-item">
-                <a href="#notifications"
-                  ><i class="fa fa-fw fa-bell"></i> Notifications</a
-                >
+                <a href="#notifications"><i class="fa fa-fw fa-bell"></i>Notifications</a>
               </li>
             </ul>
-            <ul class="nav">
-              <li class="nav-item">
-                <a href="#messages"
-                  ><i class="fa fa-fw fa-envelope"></i> Messages</a
-                >
-              </li>
-            </ul>
-            <ul class="nav">
-              <li class="nav-item">
-                <a href="#more"><i class="fa fa-fw fa-ellipsis-h"></i> More</a>
-              </li>
-            </ul>
-            <a class="btn btn-primary btn-sm " href="#" role="button">Post</a>
           </div>
           <div class="col-6 border border-1 rounded">
             <form class=" row mt-8" id="form" action="/tweets/create" method="POST">
@@ -72,6 +62,8 @@
                     <b><%= currentUser.fullName %></b>
                       @<%= currentUser.userName %>
                   </span>
+                  <br>
+                  <input type="text" id="hashtag" name="hashtag" placeholder="#Hashtag" /> <br>
                   <textarea rows = "5" name="description" id="inputDescription" class="form-control" autofocus></textarea>
                   <br>
                   <button class="btn btn-lg btn-primary btn-block" type="submit">Tweet</button>

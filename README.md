@@ -56,10 +56,10 @@ Technologies:
 - [x] Added links to the home page and user's profile and also a search box in the navigation bar 
 - [x] Created 3 columns under the navigation bar, all columns are styled with a gray border and rounded.```<div class="row d-flex flex-row justify-content-center bd-highlight"> & <div class="col  border border-1 rounded ">```
 - [x] Column 1: Includes links to Explore the page, Notifications, Messages, and More options using the nav & nav-item class from bootstrap```<ul class="nav"><li class="nav-item">```
-- [x] Column 2: Includes a What's happening input box with a Post button follow by User's posts samples for the purpose of this assignment. The size of this column is col-6 ```<div class="col-6 border border-1 rounded">```
-- [x] Column 3: Includes A trending section at the top and a Who to follow section at the bottom. 
+- [x] Column 2: Includes a What's happening input box with a Post button profile by User's posts samples for the purpose of this assignment. The size of this column is col-6 ```<div class="col-6 border border-1 rounded">```
+- [x] Column 3: Includes A trending section at the top and a Who to profile section at the bottom. 
 - [x] The  Trending section was created by using col-12 and class card and container from bootstrap ``` <div class="col-12 border-col4 rounded "> , <div class="card"> , <div class="container">```
-- [x] The Who to follow section was created by using col-12 and spans for the purpose of this assignment only ``` <div class="col-12 border-col4 rounded"> ```
+- [x] The Who to profile section was created by using col-12 and spans for the purpose of this assignment only ``` <div class="col-12 border-col4 rounded"> ```
 - [x] At the end of the page, there is a footer added that reads: @2021 Chitter-Chatter using the text-center class to center the footer at the bottom of the page ``` <footer class="text-center"> ```
 
 ### Assignment 2
@@ -147,7 +147,7 @@ If you get an error, make sure you don't have another server listening on port 3
 - [x] User info is shown by clicking on the profile: first name, last name, username, email, and password. 
 - [x] Added a text area for the user to post. The limit size is 250 characters.
 - [x] A user is able to post a tweet and see all tweets currently in the database. 
-- [x] A section for WHO TO FOLLOW has been added to the side menu with placeholders for now. 
+- [x] A section for WHO TO profile has been added to the side menu with placeholders for now. 
 - [x] A section TRENDING TOPICS has been added to the side menu with placeholders for now. 
 
 #### Instructions to run: 
@@ -161,5 +161,5 @@ If you get an error, make sure you don't have another server listening on port 3
 We unfortunately ran out of time to complete all of the requirments of assignment 4 so we ended up submitting what we had so far. We have all of the components there like thea ability for the users to post tweets and see all tweets, it's just missing a few things so we will continue to work on it in the next few days. We gave it our best shot but just ran out of time. 
 - [x] We still need to add user name and the user's first and last name to each tweet. We are working on using references from user schema to tweet schema. We had issues with it becuase it kept causing the app to crash so we decided to no include it in our submission for now. We are working on debugging it. 
 - [x] We need to make sure that a user can't edit other user's profile information/tweets. Right now, any user can edit any other user's profile details and tweets and even delete them which is not ideal so we will work on ficing that. 
-- [x] We need to display all of our user in "Who to follow" tab 
+- [x] We need to display all of our user in "Who to profile" tab 
 - [x] Generally, we need to clean up the look and feel of the whole app and how it flows which will be our goal of the final submission. 

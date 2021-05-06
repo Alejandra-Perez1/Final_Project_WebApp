@@ -1,0 +1,12 @@
+<!-- Unfollow feature ? -->
+
+<div class="data-form">
+    <form class="form-signin" action="<%=`/follow/${follow._id}/update?_method=PUT`%>" method="POST">
+      <h2 class="form-signin-heading">Unfollow User Info:</h2>
+      <label for="inputName">Name</label>
+      <input type="text" name="name" id="inputName" class="form-control" value="<%= follow.fullName %>" placeholder="Name" autofocus>
+      <label for="inputUserName">User Name</label>
+      <input type="text" name="userName" id="inputUserName" class="form-control" value="<%= follow.userName %>" placeholder="User Name" required>
+      <br /><button class="btn btn-lg btn-primary btn-block" type="submit">Unfollow</button>
+    </form>
+  </div>

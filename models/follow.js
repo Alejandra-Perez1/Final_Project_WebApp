@@ -6,25 +6,25 @@ const mongoose = require("mongoose"),
 
 var followSchema = new Schema(
   {
-    name: {
-      first: {
-        type: String,
-        trim: true
-      }
-      
+
+    first: {
+      type: String,
+      trim: true,
+      require: true
     },
+
     last: {
-        type: String,
-        trim: true
-      },
+      type: String,
+      trim: true,
+      require: true
+    },
     userName: {
       type: String,
       required: true,
       lowercase: true,
       unique: true
     },
-    follow: [{type: mongoose.Schema.Types.ObjectId, ref: "follow"}],
-    unfollow: [{type: mongoose.Schema.Types.ObjectId, ref: "unfollow"}]
+    follow: [{type: mongoose.Schema.Types.ObjectId, ref: "follow"}]
   },
   {
     timestamps: true
@@ -32,19 +32,22 @@ var followSchema = new Schema(
 );
 
 followSchema.methods.getInfo = function () {
-  return `name ${this.name} last ${this.last} userName ${this.userName} `;
+  return `first ${this.first} last ${this.last} userName ${this.userName} `;
 };
 
-followSchema.virtual("fullName").get(function () {
-  return `${this.first} ${this.last}`;
-});
+// profileSchema.virtual("fullName").get(function () {
+//   return `${this.first} ${this.last}`;
+// });
 
-followSchema.methods.findLocalUser = function () {
-  return this.model("User")
-      .find({
-        userName: this.userName
-      })
-      .exec();
-}
+// //Instance method to find profileer withthe same userName?
+// //Not sure if we'll use this
+// profileSchema.methods.findLocalUser = function () {
+//   return this.model("User")
+//     .find({
+//       userName: this.userName
+//     })
+//     .exec();
+// }
 
+//export the profile model
 module.exports = mongoose.model("follow", followSchema);

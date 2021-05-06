@@ -58,9 +58,10 @@ const mongoose = require("mongoose"),
       type: String,
       trim: true
     },
+    //arrays to store tweets, profileer, and profiles for each user
     tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tweet" }],
-    follower: [{ type: mongoose.Schema.Types.ObjectId, ref: "Follow" }],
-    unfollow: [{ type: mongoose.Schema.Types.ObjectId, ref: "unfollow" }]
+    follow:[{type: mongoose.Schema.Types.ObjectId, ref: "follow"}],
+    profile: [{type: mongoose.Schema.Types.ObjectId, ref: "profile"}]
   },
   {
     timestamps: true

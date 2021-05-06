@@ -1,0 +1,39 @@
+<!-- This should give you a list of people that the current user
+    follows  -->
+
+    <h2 class="center">Profiles</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Last</th>
+          <th>User Name</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% profile.forEach(profiles => { %>
+        <tr>
+          <td>
+            <a href="<%= `/profile/${profiles._id}` %>">
+              <%= profiles.name %>
+            </a>
+          </td>
+          <td>
+            <%= profiles.last %>
+          </td>
+          <td>
+            <%= profiles.userName %>
+          </td>
+          <td>
+            <a href="<%=`profile/${profiles._id}/edit`%>">
+              Edit ?
+            </a>
+          </td><td>
+            <a href="<%= `profile/${profiles._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to remove this profile?')" a>Remove</a>
+          </td>
+         
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>

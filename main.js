@@ -1,11 +1,15 @@
 "use strict";
 
-//const followController = require("./controllers/followController");
+const follow = require("./models/follow");
+
+//const profileController = require("./controllers/profileController");
 
 const express = require("express"),
   layouts = require("express-ejs-layouts"),
   app = express(),
   router = express.Router(),
+  profileController = require("./controllers/profileController"),
+  followController = require("./controllers/followController"),
   homeController = require("./controllers/homeController"),
   errorController = require("./controllers/errorController"),
   usersController = require("./controllers/usersController.js"),
@@ -105,7 +109,25 @@ router.get("/tweets/:id", tweetsController.show, tweetsController.showView);
 router.delete("/tweets/:id/delete", tweetsController.delete, tweetsController.redirectView);
 
 
-//router.get("/follow", followController.index, followController.indexView);
+//follow routes
+router.get("/follow", followController.index, followController.indexView);
+router.get("/follow/new", followController.new);
+router.post("/follow/create", followController.create, followController.redirectView);
+router.get("/follow/:id/edit", followController.edit);
+router.put("/follow/:id/update", followController.update, followController.redirectView);
+router.get("/follow/:id", followController.show, followController.showView);
+router.delete("/follow/:id/delete", followController.delete, followController.redirectView);
+
+//profile routes
+router.get("/profile", profileController.index, profileController.indexView);
+router.get("/profile/new", profileController.new);
+router.post("/profile/create", profileController.create, profileController.redirectView);
+router.get("/profile/:id", profileController.show, profileController.showView);
+router.get("/profile/:id/edit", profileController.edit);
+router.put("/profile/:id/update", profileController.update, profileController.redirectView);
+router.delete("/profile/:id/delete", profileController.delete, profileController.redirectView);
+
+
 router.use(errorController.pageNotFoundError);
 router.use(errorController.internalServerError);
 

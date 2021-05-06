@@ -108,7 +108,7 @@ router.get("/tweets/:hashtag/findHashtags", tweetsController.findHashtags, tweet
 router.post("/tweets/:hashtag/findHashtags", tweetsController.findHashtags, tweetsController.redirectView);
 
 
-//router.get("/follow", followController.index, followController.indexView);
+router.get("/follow", followController.index, followController.indexView);
 router.use(errorController.pageNotFoundError);
 router.use(errorController.internalServerError);
 

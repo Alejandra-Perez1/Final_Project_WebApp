@@ -143,20 +143,6 @@
               <h3>
                 What's Trending?
               </h3>
-              <% if (tweets) { %>
-                <div class="card">
-                  <h5> <%= tweets[0].hashtag %></h5>
-                  <% for (var i = 0; i < tweets.length; i++) { %>
-                    <% if (i < 10) { %>
-                      <div class="container">
-                        <h5><b> <%= tweets[i].hashtag %></b></h5>
-                        <p> <%= tweets[i].description %></p>  
-                      </div>
-                    <% } %>
-                  <% } %>
-                </div>
-              <% } %>
-
               <div class="card">
                 <div class="container">
                   <p>Trending in Music</p>
@@ -167,13 +153,13 @@
                   </p>
                 </div>
               </div>
-              <!-- <div class="card">
+              <div class="card">
                 <div class="container">
                   <p>Trending in United States</p>
                   <h5><b>#RIP Twitter</b></h5>
                   <p>Twitter has gone crazy</p>
                 </div>
-              </div> -->
+              </div>
             </div>
             
             <div class="col-12 border-col4 rounded">
@@ -202,7 +188,6 @@
                 </div>
                 <a class="btn btn-primary btn-sm " href="#" role="button"
                   >Follow</a>
-
                   
               </div>
               <div>

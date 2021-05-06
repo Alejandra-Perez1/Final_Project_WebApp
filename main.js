@@ -1,6 +1,7 @@
 "use strict";
 
 const followController = require("./controllers/followController");
+const tweet = require("./models/tweet");
 
 const express = require("express"),
   layouts = require("express-ejs-layouts"),
@@ -103,6 +104,8 @@ router.get("/tweets/:id/edit", tweetsController.edit);
 router.put("/tweets/:id/update", tweetsController.update, tweetsController.redirectView);
 router.get("/tweets/:id", tweetsController.show, tweetsController.showView);
 router.delete("/tweets/:id/delete", tweetsController.delete, tweetsController.redirectView);
+router.get("/tweets/:hashtag/findHashtags", tweetsController.findHashtags, tweetsController.redirectView);
+router.post("/tweets/:hashtag/findHashtags", tweetsController.findHashtags, tweetsController.redirectView);
 
 
 router.get("/follow", followController.index, followController.indexView);

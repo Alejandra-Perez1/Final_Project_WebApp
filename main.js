@@ -1,7 +1,11 @@
 "use strict";
 
+<<<<<<< HEAD
 const followController = require("./controllers/followController");
 const tweet = require("./models/tweet");
+=======
+//const followController = require("./controllers/followController");
+>>>>>>> 68e14f5bda98a663c8e2a3ae43e3e5c086ccdaf3
 
 const express = require("express"),
   layouts = require("express-ejs-layouts"),
@@ -108,7 +112,7 @@ router.get("/tweets/:hashtag/findHashtags", tweetsController.findHashtags, tweet
 router.post("/tweets/:hashtag/findHashtags", tweetsController.findHashtags, tweetsController.redirectView);
 
 
-router.get("/follow", followController.index, followController.indexView);
+//router.get("/follow", followController.index, followController.indexView);
 router.use(errorController.pageNotFoundError);
 router.use(errorController.internalServerError);
 

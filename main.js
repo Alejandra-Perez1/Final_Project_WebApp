@@ -6,8 +6,9 @@ const follow = require("./models/follow");
 
 const express = require("express"),
   layouts = require("express-ejs-layouts"),
+  // router = express.Router("./routes/index"),
+  router = require("./routes/index"),
   app = express(),
-  router = express.Router(),
   profileController = require("./controllers/profileController"),
   followController = require("./controllers/followController"),
   homeController = require("./controllers/homeController"),
@@ -35,27 +36,27 @@ app.set("port", process.env.PORT || 3000);
 app.set("view engine", "ejs");
 
 //Method Override
-router.use(
+app.use(
   methodOverride("_method", {
     methods: ["POST", "GET"]
   })
 );
 
-router.use(layouts);
-router.use(express.static("public"));
-router.use(expressValidator());
+app.use(layouts);
+app.use(express.static("public"));
+app.use(expressValidator());
 
 //Express body parser
-router.use(
+app.use(
   express.urlencoded({
     extended: false
   })
 );
-router.use(express.json());
+app.use(express.json());
 
 // Express session
-router.use(cookieParser("secretChitterChatter123"));
-router.use(
+app.use(cookieParser("secretChitterChatter123"));
+app.use(
   expressSession({
     secret: "secretChitterChatter123",
     cookie: {
@@ -65,71 +66,21 @@ router.use(
     saveUninitialized: false
   })
 );
-router.use(connectFlash());
+app.use(connectFlash());
 
 // Passport middleware
-router.use(passport.initialize());
-router.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-router.use((req, res, next) => {
+app.use((req, res, next) => {
   res.locals.loggedIn = req.isAuthenticated();
   res.locals.currentUser = req.user;
   res.locals.flashMessages = req.flash();
   next();
 });
-
-// User Routes
-router.get("/", homeController.index);
-router.get("/users", usersController.index, usersController.indexView);
-router.get("/users/new", usersController.new);
-router.post(
-  "/users/create",
-  usersController.validate,
-  usersController.create,
-  usersController.redirectView
-);
-router.get("/users/login", usersController.login);
-router.post("/users/login", usersController.authenticate);
-router.get("/users/logout", usersController.logout, usersController.redirectView);
-router.get("/users/:id/edit", usersController.edit);
-router.put("/users/:id/update", usersController.update, usersController.redirectView);
-router.get("/users/:id", usersController.show, usersController.showView);
-router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
-
-//Tweets Routes
-router.get("/tweets", tweetsController.index, tweetsController.indexView);
-router.get("/tweets/new", tweetsController.new);
-router.post("/tweets/create", tweetsController.create, tweetsController.redirectView);
-router.get("/tweets/:id/edit", tweetsController.edit);
-router.put("/tweets/:id/update", tweetsController.update, tweetsController.redirectView);
-router.get("/tweets/:id", tweetsController.show, tweetsController.showView);
-router.delete("/tweets/:id/delete", tweetsController.delete, tweetsController.redirectView);
-
-
-//follow routes
-router.get("/follow", followController.index, followController.indexView);
-router.get("/follow/new", followController.new);
-router.post("/follow/create", followController.create, followController.redirectView);
-router.get("/follow/:id/edit", followController.edit);
-router.put("/follow/:id/update", followController.update, followController.redirectView);
-router.get("/follow/:id", followController.show, followController.showView);
-router.delete("/follow/:id/delete", followController.delete, followController.redirectView);
-
-//profile routes
-router.get("/profile", profileController.index, profileController.indexView);
-router.get("/profile/new", profileController.new);
-router.post("/profile/create", profileController.create, profileController.redirectView);
-router.get("/profile/:id", profileController.show, profileController.showView);
-router.get("/profile/:id/edit", profileController.edit);
-router.put("/profile/:id/update", profileController.update, profileController.redirectView);
-router.delete("/profile/:id/delete", profileController.delete, profileController.redirectView);
-
-
-router.use(errorController.pageNotFoundError);
-router.use(errorController.internalServerError);
 
 app.use("/", router);
 

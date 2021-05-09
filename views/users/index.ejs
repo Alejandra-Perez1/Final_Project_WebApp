@@ -1,16 +1,11 @@
 <div class="center container" style="margin-top: 100px !important">
-  <h2 >List of Users</h2>
-  <div >
-    <a class="button" href="/users/new">Create an Account</a>
-  </div>
+  <h2 class="text-center">Who to Follow:</h2>
   <table class="table ">
     <thead>
       <tr>
         <th>Name</th>
-        <th>Email</th>
         <th>User Name</th>
-        <th>Follow user</th>
-        <!-- <th>Delete Account</th> -->
+        <th>Follow</th>
       </tr>
     </thead>
     <tbody>
@@ -22,20 +17,13 @@
             </a>
           </td>
           <td>
-            <%= user.email %>
-          </td>
-          <td>
-            <%= user.userName %>
+            @<%= user.userName %>
           </td>
           <td>
             <a href="<%=`/follow`%>">
               Follow
             </a>
           </td>
-          <!-- <td>
-            <a href="<%=`/users/${user._id}/delete?_method=DELETE` %>"
-              onclick="return confirm('Are you sure you want to delete your account?')" a>Delete Account</a>
-          </td> -->
         </tr>
         <% }); %>
     </tbody>

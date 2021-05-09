@@ -1,6 +1,8 @@
 "use strict";
 
 const Tweet = require("../models/tweet");
+const user = require("../models/user");
+const User = require("../models/user");
 
 module.exports = {
   index: (req, res, next) => {
@@ -14,6 +16,18 @@ module.exports = {
         next(error);
       });
   },
+  indexByUsername: (req, res, next)=>{
+    let user = req.params.userName;
+    Tweet.find({fullName: user}).sort({date:-1})
+    .then(tweets=>{
+        res.locals.tweets = tweets;
+        next();
+    })
+    .catch(error=>{
+        console.log(`Error fetching post data: ${error.message}`);
+        next(error);
+    });
+},
   indexView: (req, res) => {
     res.render("tweets/index");
   },

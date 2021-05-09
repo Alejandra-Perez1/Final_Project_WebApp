@@ -74,14 +74,12 @@
                 </span>
                 <input type="text" id="hashtag" name="hashtag" value="<%= tweet.hashtag %>"/>
                 <textarea rows = "5" name="description" id="inputDescription" class="form-control"autofocus><%= tweet.description %></textarea>
-                <!-- Put like Button here -->
-                <a class="btn btn-primary btn-sm" role="button" name="likes" id="likes">Like</a>
                 <br>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" href="<%=`/tweets/${tweet._id}/edit`%>">Edit Tweet </button> <br> <br>
                
                 <span>
                   <a class="button" href="<%= `/tweets/${tweet._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete the tweet?')" a>Delete</a>
-                  <a class="button" href="/tweets">View all Tweets</a>
+                  <a class="button" href="/tweets">View Older Tweets</a>
                 </span>
               </div>
             </div> 
@@ -114,7 +112,7 @@
             
             <div class="col-12 border-col4 rounded">
               <h3>
-                Who to profile
+                Who to Follow
               </h3>
               <div>
                 <img

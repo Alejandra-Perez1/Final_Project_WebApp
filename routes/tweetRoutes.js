@@ -9,5 +9,7 @@ router.get("/:id/edit", tweetsController.edit);
 router.put("/:id/update", tweetsController.update, tweetsController.redirectView);
 router.get("/:id", tweetsController.show, tweetsController.showView);
 router.delete("/:id/delete", tweetsController.delete, tweetsController.redirectView);
+router.get("/tweets/:hashtag/findHashtags", tweetsController.findHashtags, tweetsController.redirectView);
+router.post("/tweets/:hashtag/findHashtags", tweetsController.findHashtags, tweetsController.redirectView);
 
 module.exports = router;

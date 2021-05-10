@@ -152,6 +152,19 @@
               <h3>
                 What's Trending?
               </h3>
+              <% if (tweets) { %>
+                <div class="card">
+                  <h5> <%= tweets[0].hashtag %></h5>
+                  <% for (var i = 0; i < tweets.length; i++) { %>
+                    <% if (i < 10) { %>
+                      <div class="container">
+                        <h5><b> <%= tweets[i].hashtag %></b></h5>
+                        <p> <%= tweets[i].description %></p>  
+                      </div>
+                    <% } %>
+                  <% } %>
+                </div>
+              <% } %> <br>
               <div class="card">
                 <div class="container">
                   <p>Trending in Music</p>

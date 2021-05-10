@@ -120,5 +120,19 @@ module.exports = {
         console.log(`Error deleting tweet by ID: ${error.message}`);
         next();
       });
+  },
+
+  findHashtags: (req,res,next) => {
+    let tweetHashtag = req.params.hashtag;
+    Tweet.find({hashtag: tweetHashtag})
+    .then((found) => {
+      console.log(found);
+      next();
+    })
+    .catch(error => {
+      console.log(`Error finding trending tweets by hashtags : ${error.message}`);
+      next();
+    });
+
   }
 };

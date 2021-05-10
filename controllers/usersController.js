@@ -28,6 +28,7 @@ module.exports = {
     User.find()
       .then(users => {
         res.locals.users = users;
+        //res.local.users = req.users;
         next();
       })
       .catch(error => {
@@ -50,6 +51,7 @@ module.exports = {
       if (user) {
         req.flash("success", `${user.fullName}'s account created successfully!`);
         res.locals.redirect = "/users/login";
+        res.locals.user = user;
         next();
       } else {
         req.flash("error", `Failed to create user account because: ${e.message}.`);

@@ -241,3 +241,11 @@ hr {
   margin-top: 20px;
   width: 80%;
 }
+
+.following {
+  background-color: #6d7fcc;
+}
+
+.unfollow {
+  background-color: rgb(226, 223, 223);
+}

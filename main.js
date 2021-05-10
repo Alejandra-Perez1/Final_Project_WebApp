@@ -1,6 +1,5 @@
 "use strict";
 
-const follow = require("./models/follow");
 
 //const profileController = require("./controllers/profileController");
 
@@ -9,8 +8,8 @@ const express = require("express"),
   // router = express.Router("./routes/index"),
   router = require("./routes/index"),
   app = express(),
-  profileController = require("./controllers/profileController"),
-  followController = require("./controllers/followController"),
+  // profileController = require("./controllers/profileController"),
+  // followController = require("./controllers/followController"),
   homeController = require("./controllers/homeController"),
   errorController = require("./controllers/errorController"),
   usersController = require("./controllers/usersController.js"),

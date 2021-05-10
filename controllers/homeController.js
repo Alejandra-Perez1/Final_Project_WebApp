@@ -3,7 +3,7 @@
 const { render } = require("ejs");
 const mongoose = require("mongoose");
 const User = require("../models/user");
-const tweets = require("../models/tweet");
+const Tweet = require("../models/tweet");
 // const Follow = require("../models/follow");
 // const Profile = require("../models/profile");
 
@@ -57,7 +57,7 @@ module.exports = {
             if (req.url.substr(1,7) === `users` ){
               res.locals.redirect = "/users";
             }
-            else {res.locals.redirect = `/home/${otherEmail}`;}
+            else {res.locals.redirect = `/${otherEmail}`;}
             next();
           })
       }).catch(error => {
@@ -82,6 +82,14 @@ module.exports = {
         // next(error);
       })
   },
+  redirectView: (req, res, next) => {
+    let redirectPath = res.locals.redirect;
+    if (redirectPath) res.redirect(redirectPath);
+    else next();
+  },
 
+  showOther: (req, res) => {
+    res.render("/otherUser", { layout: "mainLayout" });
+  },
 
 };

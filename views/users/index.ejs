@@ -21,7 +21,7 @@
 
                       <div class="right-align">
                         <!-- .includes(other.email) -->
-                        <% if(users.following.includes(other.email)) { %>
+                        <% if(users.following) { %>
                             <form method="POST" action="<%= `/user/${other.email}?_method=PUT` %>">
                                 <button type="submit" class="btn button btnLogin unfollow">Unfollow</button>
                             </form>

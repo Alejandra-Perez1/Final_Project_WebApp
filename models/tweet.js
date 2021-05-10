@@ -1,5 +1,6 @@
 "use strict";
 const user = require("./user");
+const User = require("./user");
 
 const mongoose = require("mongoose"),
   { Schema } = require("mongoose");
@@ -7,7 +8,7 @@ const mongoose = require("mongoose"),
 var tweetSchema = new Schema(
   {
     userID : {
-      type: String, ref: user.first + " " + user.last
+      type: String, ref: User.first + " " + User.last
     },
     description: {
       type: String,
@@ -19,14 +20,11 @@ var tweetSchema = new Schema(
       type: String
     },
     date: { type: Date, default: Date.now },
-    likes: {
-      type: Number, 
-      default: 0
-    }
+    User: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
   },
   {
     timestamps: true
   }
 );
 
-module.exports = mongoose.model("Tweet", tweetSchema);
+module.exports = mongoose.model("tweets", tweetSchema);

@@ -42,6 +42,11 @@
               </li>
             </ul>
             <ul class="nav">
+                <li class="nav-item">
+                  <a href="/tweets"><i class="fa fa-fw fa-twitter"></i>Tweets</a>
+                </li>
+              </ul>
+            <ul class="nav">
               <li class="nav-item">
                 <!--  <a class="nav-link active" aria-current="page" href="#"> </a>-->
                 <a href="#explore"><i class="fa fa-fw fa-hashtag"></i>Explore</a>
@@ -70,6 +75,18 @@
                 </div>
               </div>
             </form> <br>
+
+            <!-- <div class="row">
+              <div class="col-md-8 m-auto">
+                <div class="card card-body text-center">
+                  <% tweets.forEach(tweet => { %>
+                        <a href="<%= `/tweets/${tweet._id}` %>">
+                          <%= tweet.description %>
+                        </a>
+                    <% }); %>
+                </div>
+              </div>
+            </div> -->
           
             <!-- User 1 -->
             <div>
@@ -155,7 +172,7 @@
             </div>
             <!-- <a href="/users/new" class="btn btn-primary btn-block mb-2">Sign Up</a> -->
 
-            <a href="/follow" class="btn btn-danger btn-block mt-4">List of people that you follow</a>
+            <a href="/follow" class="btn btn-danger btn-block mt-4">Following</a>
             
             </div>
           </div>

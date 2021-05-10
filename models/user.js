@@ -1,3 +1,5 @@
+const User = require("./user");
+
 const mongoose = require("mongoose"),
   { Schema } = require("mongoose"),
   passport = require("passport"),
@@ -56,8 +58,7 @@ const mongoose = require("mongoose"),
       type: String,
       trim: true
     },
-    //arrays to store tweets, profileer, and profiles for each user
-    tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tweet" }],
+    tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: "tweets" }],
     follow:[{type: mongoose.Schema.Types.ObjectId, ref: "follow"}],
     profile: [{type: mongoose.Schema.Types.ObjectId, ref: "profile"}]
   },

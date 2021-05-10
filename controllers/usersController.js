@@ -1,12 +1,12 @@
 "use strict";
+const tweets = require("../models/tweet");
 
 const User = require("../models/user"),
   passport = require("passport"),
   getUserParams = body => {
     return {
-      
-        first: body.first,
-        last: body.last,
+      first: body.first,
+      last: body.last,
       email: body.email,
       userName: body.userName,
       password: body.password,
@@ -236,21 +236,3 @@ module.exports = {
     next();
   }
 };
-
-// exports.getAllUsers = (req, res) => {
-//   user.find({})
-//       .exec()
-//       .then(users => {
-//           res.render("users", {
-//               users: users
-//           })
-//       })
-//       .catch(error => {
-//           console.log(error.message);
-//           return [];
-//       })
-//       .then(() => {
-//           console.log("promise complete");
-//       });
-// };
-

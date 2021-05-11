@@ -1,31 +1,58 @@
-<div class="center container" style="margin-top: 100px !important">
-  <h2 class="text-center">Who to Follow:</h2>
-  <table class="table ">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>User Name</th>
-        <th>Follow</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% users.forEach(user=> { %>
-        <tr>
-          <td>
-            <a href="<%=`/users/${user._id}`%>">
-              <%= user.fullName %>
-            </a>
-          </td>
-          <td>
-            @<%= user.userName %>
-          </td>
-          <td>
-            <a href="<%=`/follow`%>">
-              Follow
-            </a>
-          </td>
-        </tr>
-        <% }); %>
-    </tbody>
-  </table>
+<div id="content" class="col-sm-8 col-md-6 col-lg-6" style="top: 100px !important;">
+  <div class="box home-box header-font" ><h1>Who to follow:</h1></div>
+  <div class="line"></div>
+
+  <% users.forEach(other=> { %>
+      <% if (users) {%>
+          <% if (users.email !=other.email) { %>
+              <div class="box">
+                  <div class="form-group row">
+                      <!-- <div class="col-sm-2 col-md-2">
+                          <img src="../images/self.png" class="big-symbol" />
+                      </div> -->
+                      <div class="col-sm-7 col-md-7">
+                          <p class="header-font">
+                              <%= other.userName %>
+                          </p>
+                          <p class="fullName text-secondary">
+                              @<%= other.fullName %>
+                          </p>
+                      </div>
+
+                      <div class="right-align">
+                        <!-- .includes(other.email) -->
+                        <% if(users.following) { %>
+                            <form method="POST" action="<%= `/user/${other.email}?_method=PUT` %>">
+                                <button type="submit" class="btn button btnLogin unfollow">Unfollow</button>
+                            </form>
+                            <% } else { %>
+                                <form method="POST" action="<%= `/user/${other.email}?_method=PUT` %>">
+                                    <button type="submit" class="btn button btnLogin following">Follow</button>
+                                </form>
+                                <% } %>
+                    </div>
+                     
+                  </div>
+              </div>
+              <div class="line"></div>
+              <%}%>
+                  <%} else {%>
+                      <div class="box">
+                          <div class="form-group row">
+                              <div class="col-sm-2 col-md-2">
+                                  <img src="../images/self.png" class="big-symbol" />
+                              </div>
+                              <div class="col-sm-7 col-md-7">
+                                  <p class="header-font">
+                                      <%= other.userName %>
+                                  </p>
+                                  <p class="fullName text-secondary">
+                                      @<%= other.fullName %>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="line"></div>
+                      <%}%>
+                          <% }); %>
 </div>

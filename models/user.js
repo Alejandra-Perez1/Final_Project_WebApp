@@ -13,7 +13,6 @@ const mongoose = require("mongoose"),
     },
     last: {
       type: String,
-      trim: true
     },
     email: {
       type: String,
@@ -59,14 +58,17 @@ const mongoose = require("mongoose"),
       trim: true
     },
     tweets: [{ type: mongoose.Schema.Types.ObjectId, ref: "tweets" }],
-    follow:[{type: mongoose.Schema.Types.ObjectId, ref: "follow"}],
-    profile: [{type: mongoose.Schema.Types.ObjectId, ref: "profile"}]
+    following: [],
+    //profile: [{type: mongoose.Schema.Types.ObjectId, ref: "profile"}]
   },
   {
     timestamps: true
   }
 );
 
+userSchema.virtual("numOfFollowing").get(function () {
+  return this.following.length;
+});
 userSchema.methods.getInfo = function () {
   return `name ${this.first} last ${this.last} userName ${this.userName} email ${this.email} date ${this.date} biography ${this.biography}`;
 };

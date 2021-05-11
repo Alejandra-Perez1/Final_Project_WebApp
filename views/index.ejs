@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- import stylesheet -->
     <link rel="stylesheet" href="/css/Chitter_Chatter.css">
+    <link rel="stylesheet" href="/public/css/Chitter_Chatter.css">
     
 
     <!-- import bootstrap-->
@@ -75,18 +76,6 @@
                 </div>
               </div>
             </form> <br>
-
-            <!-- <div class="row">
-              <div class="col-md-8 m-auto">
-                <div class="card card-body text-center">
-                  <% tweets.forEach(tweet => { %>
-                        <a href="<%= `/tweets/${tweet._id}` %>">
-                          <%= tweet.description %>
-                        </a>
-                    <% }); %>
-                </div>
-              </div>
-            </div> -->
           
             <!-- User 1 -->
             <div>
@@ -152,40 +141,33 @@
               <h3>
                 What's Trending?
               </h3>
-              <% if (tweets) { %>
+              <% if (Tweet) { %>
                 <div class="card">
-                  <h5> <%= tweets[0].hashtag %></h5>
-                  <% for (var i = 0; i < tweets.length; i++) { %>
+                  <h5> <%= Tweet[0].hashtag %></h5>
+                  <% for (var i = 0; i < Tweet.length; i++) { %>
                     <% if (i < 10) { %>
                       <div class="container">
-                        <h5><b> <%= tweets[i].hashtag %></b></h5>
-                        <p> <%= tweets[i].description %></p>  
+                        <h5><b> <%= Tweet[i].hashtag %></b></h5>
+                        <p> <%= Tweet[i].description %></p>  
                       </div>
                     <% } %>
                   <% } %>
                 </div>
-              <% } %> <br>
+              <% } %>
+              <br>
               <div class="card">
                 <div class="container">
-                  <p>Trending in Music</p>
-                  <h5><b>Bruno Mars</b></h5>
-                  <p>
-                    Bruno Mars announced an upcoming album with Anderson titled
-                    Silk Sonic
-                  </p>
+                  <a href="">#Cats</a> <br>
+                  <a href="">#COVID19</a> <br>
+                  <a href="">#PB&J</a> <br>
+                  <a href="">#Fritos</a> <br>
                 </div>
               </div>
-              <div class="card">
-                <div class="container">
-                  <p>Trending in United States</p>
-                  <h5><b>#RIP Twitter</b></h5>
-                  <p>Twitter has gone crazy</p>
-                </div>
-              </div>
+              
             </div>
             <!-- <a href="/users/new" class="btn btn-primary btn-block mb-2">Sign Up</a> -->
 
-            <a href="/follow" class="btn btn-danger btn-block mt-4">Following</a>
+            <a href="/follow" class="btn btn-primary btn-block mt-4">Following</a>
             
             </div>
           </div>
@@ -196,16 +178,18 @@
       </footer>
     </body>
   <%} else {%>
-    <div class="row mt-5">
+    <div class="form-signin row mt-5">
       <div class="col-md-6 m-auto">
-        <div class="card card-body text-center " style="top: 100px !important;">
-          <h1><i class="fab fa-node-js fa-3x"></i></h1>
-          <h1>Welcome!</h1>
-          <div class="col-sm nav-align">
-            <p> Create a Account or Log In</p>
-            <a href="/users/new" class="btn btn-primary btn-block mb-2">Sign Up</a>
-            <a href="/users/login" class="btn btn-secondary btn-block">Login</a>
+        <div class="card card-body text-center" style="top: 100px !important;">
+          <div style="text-align:center">
+            <img class="img" src="../images/logo.jpg" alt="logo" />
           </div>
+          <h2 class="form-signin-heading">Welcome!</h2>
+          <p> Create a Account or Log In</p>
+
+          <a href="/users/login" class="btn btn-primary btn-block">Login</a>
+          <div style="text-align:center">OR</div>
+          <a href="/users/new" class="btn btn-secondary btn-block mb-2">Sign Up</a>
         </div>
       </div>
     </div>

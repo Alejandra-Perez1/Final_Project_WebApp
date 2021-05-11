@@ -1,16 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina");
 
-/* .logo{
+.logo{
     width: 50px;
     border-radius: 50%;
-} */
+}
 
 body {
   margin: 0;
   padding-top: 40px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #625a56;
-  
 }
 
 #nav {
@@ -21,25 +20,20 @@ body {
   box-shadow: 10px 10px 10px #ccc;
   position: absolute;
   top: 300;
-  
 }
 
 #title {
   color: #625a56;
-  margin: 0;
+  margin: 10;
+  margin-top: 10;
   font-family: "Baloo Bhaina";
   text-transform: uppercase;
 }
 
-/*img {
-  width: 100%;
-  border-radius: 50%;
-  align-items: center;
-}*/
-
 img {
   width: 70px;
-  border-radius: 10%;
+  border-radius: 1000%;
+  margin-top: 5;
 }
 
 a {
@@ -212,7 +206,7 @@ button[type=submit] {
   display: inline-block;
   padding: 0 8px;
   border-radius: 10px;
-  background: #fff;
+  background: #ffffff;
 }
 
 .striped-border {
@@ -240,6 +234,11 @@ button[type=submit] {
 hr {
   margin-top: 20px;
   width: 80%;
+}
+
+.homebutton {
+  position:absolute;
+  text-align: center;
 }
 
 .following {

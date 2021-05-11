@@ -12,16 +12,16 @@ module.exports = {
     res.render('index', {
       User: User,
       User: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
-      tweets: [{type: mongoose.Schema.Types.ObjectId, ref: User.tweets}],
+      Tweet: [{type: mongoose.Schema.Types.ObjectId, ref: User.tweets}],
       follower: [{type: mongoose.Schema.Types.ObjectId, ref: User.follower}],
       profile: [{type: mongoose.Schema.Types.ObjectId, ref: User.profile}]
 
   });
-  tweets.find({hashtag: 'gym'})
+  Tweet.find({hashtag: 'gym'})
     .then((found) => {
       res.render('index', {
         User: User,
-        userArray: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
+        User: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
         tweets: found,
       });
     })
@@ -29,7 +29,7 @@ module.exports = {
       console.log(`Error finding trending tweets by hashtags : ${error.message}`);
       res.render('index', {
         User: User,
-        userArray: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
+        User: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
         tweets: null,
       });
     });

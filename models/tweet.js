@@ -1,5 +1,5 @@
 "use strict";
-const user = require("./user");
+
 const User = require("./user");
 
 const mongoose = require("mongoose"),
@@ -7,9 +7,6 @@ const mongoose = require("mongoose"),
 
 var tweetSchema = new Schema(
   {
-    userID : {
-      type: String, ref: User.first + " " + User.last
-    },
     description: {
       type: String,
       required: true,
@@ -19,7 +16,7 @@ var tweetSchema = new Schema(
     hashtag: {
       type: String
     },
-    date: { type: Date, default: Date.now },
+    //date: { type: Date, default: Date.now },
     User: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
   },
   {

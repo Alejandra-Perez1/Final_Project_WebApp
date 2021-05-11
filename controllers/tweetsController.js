@@ -1,8 +1,15 @@
 "use strict";
 
-const Tweet = require("../models/tweet");
-const user = require("../models/user");
-const User = require("../models/user");
+const Tweet = require("../models/tweet"),
+  httpStatus = require("http-status-codes"),
+  User = require("../models/user"),
+  getTweetParams = body => {
+    return {
+      description: body.description,
+      hashtag: body.hashtag,
+      //date: body.date
+    };
+  };
 
 module.exports = {
   index: (req, res, next) => {
@@ -16,18 +23,18 @@ module.exports = {
         next(error);
       });
   },
-  indexByUsername: (req, res, next)=>{
-    let user = req.params.userName;
-    Tweet.find({fullName: user}).sort({date:-1})
-    .then(tweets=>{
-        res.locals.tweets = tweets;
-        next();
-    })
-    .catch(error=>{
-        console.log(`Error fetching post data: ${error.message}`);
-        next(error);
-    });
-},
+  // indexByUsername: (req, res, next)=>{
+  //   let user = req.params.userName;
+  //   Tweet.find({fullName: user}).sort({date:-1})
+  //   .then(tweets=>{
+  //       res.locals.tweets = tweets;
+  //       next();
+  //   })
+  //   .catch(error=>{
+  //       console.log(`Error fetching post data: ${error.message}`);
+  //       next(error);
+  //   });
+  // },
   indexView: (req, res) => {
     res.render("tweets/index");
   },
@@ -37,12 +44,8 @@ module.exports = {
   },
 
   create: (req, res, next) => {
-    let newTweet = new Tweet({
-      userId: req.body.userId,
-      hashtag: req.body.hashtag,
-      description: req.body.description
-    });
-    Tweet.create(newTweet)
+    let tweetParams = getTweetParams(req.body);
+    Tweet.create(tweetParams)
       .then(tweet => {
         res.locals.redirect = "/tweets";
         res.locals.tweet = tweet;
@@ -92,14 +95,14 @@ module.exports = {
   },
 
   update: (req, res, next) => {
-    let tweetId = req.params.id;
-    let updatedtweet = new Tweet ({
+    let tweetId = req.params.id,
+    tweetParams = getTweetParams(req.body);
 
-    });
-
-    Tweet.findByIdAndUpdate(tweetId, updatedtweet) 
+    Tweet.findByIdAndUpdate(tweetId, {
+      $set: tweetParams
+    }) 
       .then(tweet => {
-        res.locals.redirect = `/tweets/${tweetId}`;
+        res.locals.redirect = "/tweets";
         res.locals.tweet = tweet;
         next();
       })
@@ -120,6 +123,28 @@ module.exports = {
         console.log(`Error deleting tweet by ID: ${error.message}`);
         next();
       });
+  },
+
+  respondJSON: (req, res) => {
+    res.json({
+      status: httpStatus.OK,
+      data: res.locals
+    });
+  },
+  errorJSON: (error, req, res, next) => {
+    let errorObject;
+    if (error) {
+      errorObject = {
+        status: httpStatus.INTERNAL_SERVER_ERROR,
+        message: error.message
+      };
+    } else {
+      errorObject = {
+        status: httpStatus.OK,
+        message: "Unknown Error."
+      };
+    }
+    res.json(errorObject);
   },
 
   findHashtags: (req,res,next) => {

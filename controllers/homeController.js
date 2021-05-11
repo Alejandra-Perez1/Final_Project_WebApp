@@ -17,7 +17,7 @@ module.exports = {
       profile: [{type: mongoose.Schema.Types.ObjectId, ref: User.profile}]
 
   });
-  Tweet.find({hashtag: 'gym'})
+  tweets.find({hashtag: 'gym'})
     .then((found) => {
       res.render('index', {
         User: User,

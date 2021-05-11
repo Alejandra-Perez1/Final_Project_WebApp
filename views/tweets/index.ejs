@@ -1,31 +1,21 @@
 <div class="center container" style="margin-top: 50px !important">
   <h2 class="text-center">Tweets</h2>
     <% tweets.forEach(tweet => { %>
-      <body>
+      <body id="userprofile">
         <div class="card mt-4 text-center">
-            <div class="card-body">
-              <div class="card-text mb-4">
-                <h6 id="fullname"><%= currentUser.fullName %></h6>
-                  <!-- <h6 id="username">@<%= currentUser.userName %></h6> -->
-                <a href="<%= `/tweets/${tweet._id}` %>">@<%= currentUser.userName %></a>
-                <p><%= tweet.description %></p>
-                <p> Hashtags: <%= tweet.hashtag %></p>
-
-                <p>Following: </p>
-                
-                
-                
-
-
-
-                  </div>
-              </div>
-            </div>
-            <% if(loggedIn && currentUser.userName) { %>
+          <div class="card-body">
+            <div class="card-text mb-4">
+              <h6 id="fullname"><%= currentUser.fullName %></h6>
+              <!-- <h6 id="username">@<%= currentUser.userName %></h6> -->
+              <p>@<%= currentUser.userName %></p>
+              <a href="<%= `/tweets/${tweet._id}` %>"><%= tweet.description %></a>
+              <p> Hashtags: <%= tweet.hashtag %></p>
+              <p> Following: </p>
               <a class="button" href="<%=`tweets/${tweet._id}/edit`%>"> Edit Tweet</a>
               <a class="button" href="<%= `tweets/${tweet._id}/delete?_method=DELETE` %>"
                 onclick="return confirm('Are you sure you want to delete this record?')" a>Delete Tweet</a>
-            <% } %>
+            </div>
+          </div>
         </div>
       </body>
     <% }); %>

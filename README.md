@@ -124,7 +124,7 @@ Technologies:
 npm install
 
 3. Start the server:
-node server
+mongod
 If you get an error, make sure you don't have another server listening on port 3000.
 
 ### Assignment 4
@@ -163,3 +163,5 @@ We unfortunately ran out of time to complete all of the requirments of assignmen
 - [x] We need to make sure that a user can't edit other user's profile information/tweets. Right now, any user can edit any other user's profile details and tweets and even delete them which is not ideal so we will work on ficing that. 
 - [x] We need to display all of our user in "Who to profile" tab 
 - [x] Generally, we need to clean up the look and feel of the whole app and how it flows which will be our goal of the final submission. 
+
+####Final Report:

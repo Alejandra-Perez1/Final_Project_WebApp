@@ -9,21 +9,24 @@ const Tweet = require("../models/tweet");
 
 module.exports = {
   index: (req, res) => {
-    res.render('index', {
-      User: User,
-      User: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
-      Tweet: [{type: mongoose.Schema.Types.ObjectId, ref: User.tweets}],
-      follower: [{type: mongoose.Schema.Types.ObjectId, ref: User.follower}],
-      profile: [{type: mongoose.Schema.Types.ObjectId, ref: User.profile}]
-
-  });
-  Tweet.find({hashtag: 'gym'})
+    let found_tweets = null;
+    let curr_tweet = 'gym'
+    Tweet.find({hashtag: curr_tweet})
     .then((found) => {
       res.render('index', {
         User: User,
-        User: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
+        userArray: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
         tweets: found,
       });
+    res.render('index', {
+      User: User,
+      User: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
+      tweets: [{type: mongoose.Schema.Types.ObjectId, ref: User.tweets}],
+      follower: [{type: mongoose.Schema.Types.ObjectId, ref: User.follower}],
+      profile: [{type: mongoose.Schema.Types.ObjectId, ref: User.profile}],
+      
+  });
+  
     })
     .catch(error => {
       console.log(`Error finding trending tweets by hashtags : ${error.message}`);

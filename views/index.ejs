@@ -141,14 +141,14 @@
               <h3>
                 What's Trending?
               </h3>
-              <% if (Tweet) { %>
+              <% if (tweets) { %>
                 <div class="card">
-                  <h5> <%= Tweet[0].hashtag %></h5>
-                  <% for (var i = 0; i < Tweet.length; i++) { %>
+                  <h5> #<%= tweets[0].hashtag %></h5>
+                  <% for (var i = 0; i < tweets.length; i++) { %>
                     <% if (i < 10) { %>
                       <div class="container">
-                        <h5><b> <%= Tweet[i].hashtag %></b></h5>
-                        <p> <%= Tweet[i].description %></p>  
+                        <h5><b> <%= tweets[i].hashtag %></b></h5>
+                        <p> <%= tweets[i].description %></p>  
                       </div>
                     <% } %>
                   <% } %>

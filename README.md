@@ -165,3 +165,9 @@ We unfortunately ran out of time to complete all of the requirments of assignmen
 - [x] Generally, we need to clean up the look and feel of the whole app and how it flows which will be our goal of the final submission. 
 
 ####Final Report:
+
+After assignmnet 4, we fixed some issues that were going on with our web application.Goma fixed the homepage and made the tweets to appear on a card conatiner.She also fixed some layouts to make it appear better. Sharvita worked on showing the trending tweets and Alejandra worked on the follow/unfollow so that users are able to subscribe and unsubscribe other followers. She also worked on deploying to heroku.
+Over all, our web application is functioning and users are able to sign up, login, post tweets, edit and delete tweets. Most of the parts are wokring on the website and we have deployed the application to heroku. 
+
+As for the the work load of each team memeber, Sharvita did the HTML, CSS and well as some other front end work of the sign up and sign up page and webpage, as well as trending tweets, helping fix some layout issues and helped Goma to authenticate and do some stuff in Assignment 3. Alejndra took care of the homepage and showing mock follow button and tweets as well as the deployment of the web application.
+

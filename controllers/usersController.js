@@ -99,9 +99,9 @@ module.exports = {
   },
 
   update: (req, res, next) => {
-    if(re.skip){
-      return next();
-    }
+    // if(req.skip){
+    //   return next();
+    // }
     let userId = req.params.id;
     let updatedUser = new User({
       name: {

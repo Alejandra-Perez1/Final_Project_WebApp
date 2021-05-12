@@ -10,15 +10,23 @@ const Tweet = require("../models/tweet");
 module.exports = {
   index: (req, res) => {
     let found_tweets = null;
-    let curr_tweet = 'gym'
-    Tweet.find({hashtag: curr_tweet})
-    .then((found) => {
-      res.render('index', {
-        User: User,
-        userArray: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
-        tweets: found,
-      });
+    let found_bool = false;
+    let curr_tweet = 'hello';
+    //let array = Tweet.distinct('hashtag')
+    //console.log("HELLO WORLD" + array)
+    // for(var i =0; i < array.length;i++){
+    //     curr_tweet = array[i];
+    // }
+    // Tweet.find({hashtag: curr_tweet})
+    // .then((found) => {
+    //   res.render('index', {
+    //     found_bool: true,
+    //     User: User,
+    //     userArray: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
+    //     tweets: found,
+    //   });
     res.render('index', {
+      found_bool: false,
       User: User,
       User: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
       tweets: [{type: mongoose.Schema.Types.ObjectId, ref: User.tweets}],
@@ -26,7 +34,14 @@ module.exports = {
       profile: [{type: mongoose.Schema.Types.ObjectId, ref: User.profile}],
       
   });
-  
+  Tweet.find({hashtag: curr_tweet})
+    .then((found) => {
+      res.render('index', {
+        found_bool: true,
+        User: User,
+        userArray: [{type: mongoose.Schema.Types.ObjectId, ref: User}],
+        tweets: found,
+      });
     })
     .catch(error => {
       console.log(`Error finding trending tweets by hashtags : ${error.message}`);

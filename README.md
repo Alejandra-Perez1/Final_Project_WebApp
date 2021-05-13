@@ -164,10 +164,29 @@ We unfortunately ran out of time to complete all of the requirments of assignmen
 - [x] We need to display all of our user in "Who to profile" tab 
 - [x] Generally, we need to clean up the look and feel of the whole app and how it flows which will be our goal of the final submission. 
 
-####Final Report:
+#### Final Report:
 
-After assignmnet 4, we fixed some issues that were going on with our web application.Goma fixed the homepage and made the tweets to appear on a card conatiner.She also fixed some layouts to make it appear better. Sharvita worked on showing the trending tweets and Alejandra worked on the follow/unfollow so that users are able to subscribe and unsubscribe other followers. She also worked on deploying to heroku.
-Over all, our web application is functioning and users are able to sign up, login, post tweets, edit and delete tweets. Most of the parts are wokring on the website and we have deployed the application to heroku. 
+To wrap up our project, we worked on finishing up all of the features that we had left to complete after assignment 4 and also worked on debugging any features that were broken. 
 
-As for the the work load of each team memeber, Sharvita did the HTML, CSS and well as some other front end work of the sign up and sign up page and webpage, as well as trending tweets, helping fix some layout issues and helped Goma to authenticate and do some stuff in Assignment 3. Alejndra took care of the homepage and showing mock follow button and tweets as well as the deployment of the web application.
+##### The Work Distribution for this Final Submission was the following: 
+1. Alejandra was to work on the follow/unfollow so that users can follow/unfollow other users, a user is able to see a list of all the users on their homepage, along with a button next to each user with follow/unfollow text (depending on whether they are following or not following that user).
+2. Sharvita was to work on the trending so that the top 10 trending hashtags will appear on the homepage of users. 
+3. Goma was to work on tweets so that users can post textual tweets/posts. They can see all posts by those who they follow, and they can delete their own tweets.
+
+##### The Tasks that we Accomplished: 
+1. Alejandra worked on the follow/unfollow components and the deployement of the App: 
+- [x] 
+2. Sharvita worked on the trending tweets based on the #hashtags and the demo: 
+- [x] 
+3. Goma worked on the tweets, user account, and overall debugging: 
+- [x] Users are now able to see the tweet card on their home page
+- [x] Users are now able to post a tweet and add a #hashtag with each tweet
+- [x] Users are now able to view other's tweets in a nice centered card content and edit/update/delete tweets
+- [x] Users are now able to edit/update/delete their user account
+- [x] The users are now able to click around on the side navigation to move around the app
+- [x] The css for images have been fixed so that all logo on all pages are centered
+- [x] Users were being taken to error page even after a successful account creation so that has now been fixed
+- [x] 
+
+
 

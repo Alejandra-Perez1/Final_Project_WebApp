@@ -179,14 +179,14 @@ To wrap up our project, we worked on finishing up all of the features that we ha
 2. Sharvita worked on the trending tweets based on the #hashtags and the demo: 
 - [x] 
 3. Goma worked on the tweets, user account, and overall debugging: 
-- [x] Users are now able to see the tweet card on their home page
-- [x] Users are now able to post a tweet and add a #hashtag with each tweet
-- [x] Users are now able to view other's tweets in a nice centered card content and edit/update/delete tweets
-- [x] Users are now able to edit/update/delete their user account
-- [x] The users are now able to click around on the side navigation to move around the app
-- [x] The css for images have been fixed so that all logo on all pages are centered
-- [x] Users were being taken to error page even after a successful account creation so that has now been fixed
-- [x] Previously, all of the routes were cluttered on main.js but now they all live on the routes folder and user, tweets, errors, home now all have their designated routing page. 
+  - [x] Users are now able to see the tweet card on their home page
+  - [x] Users are now able to post a tweet and add a #hashtag with each tweet
+  - [x] Users are now able to view other's tweets in a nice centered card content and edit/update/delete tweets
+  - [x] Users are now able to edit/update/delete their user account
+  - [x] The users are now able to click around on the side navigation to move around the app
+  - [x] The css for images have been fixed so that all logo on all pages are centered
+  - [x] Users were being taken to error page even after a successful account creation so that has now been fixed
+  - [x] Previously, all of the routes were cluttered on main.js but now they all live on the routes folder and user, tweets, errors, home now all have their designated routing page. 
 
 
 

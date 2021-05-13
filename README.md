@@ -186,7 +186,7 @@ To wrap up our project, we worked on finishing up all of the features that we ha
 - [x] The users are now able to click around on the side navigation to move around the app
 - [x] The css for images have been fixed so that all logo on all pages are centered
 - [x] Users were being taken to error page even after a successful account creation so that has now been fixed
-- [x] 
+- [x] Previously, all of the routes were cluttered on main.js but now they all live on the routes folder and user, tweets, errors, home now all have their designated routing page. 
 
 
 

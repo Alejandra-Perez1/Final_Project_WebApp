@@ -175,7 +175,12 @@ To wrap up our project, we worked on finishing up all of the features that we ha
 
 ##### The Tasks that we Accomplished: 
 1. Alejandra worked on the follow/unfollow components and the deployement of the App: 
-- [x] 
+- [x] Users are now able to follow other users under the profile tab 
+- [x] The followed users are shown in Mongodb Compass under the following array of each current user. 
+- [x] Web app is deploy using heroku as we did in the last classwork for confetti-cuisine, the link is https://chitter-chatter-final.herokuapp.com
+- [x] Deployed the database using Mongodb Atlas to be able to connecto the app in heroku with mongodb. 
+- [x] The link to connect to MongoDB Compass is mongodb+srv://chitter_chatter:123@chitterchatter.ecamm.mongodb.net/chitterChatter?retryWrite=true&w=majority
+- [x] Fixed seed.js to populate and add "fake" users to the web app
 2. Sharvita worked on the trending tweets based on the #hashtags and the demo: 
 - [x] 
 3. Goma worked on the tweets, user account, and overall debugging: 
